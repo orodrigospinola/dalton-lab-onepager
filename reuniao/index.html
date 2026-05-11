@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reunião de Sócios · Dalton Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #050d1c;
+  --bg-2: #0a1628;
+  --bg-3: #0f1f3a;
+  --card: rgba(15,31,58,0.7);
+  --border: rgba(51,173,229,0.12);
+  --border-2: rgba(51,173,229,0.3);
+  --text: #f0f9ff;
+  --text-2: #b6c7df;
+  --text-3: #6b7c95;
+  --text-4: #4a5670;
+  --cyan: #33ADE5;
+  --cyan-glow: rgba(51,173,229,0.15);
+  --green: #10b981;
+  --yellow: #f59e0b;
+  --purple: #a78bfa;
+  --red: #ef4444;
+  --grad-cyan: linear-gradient(135deg, #33ADE5 0%, #5BC0F0 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;display:flex;align-items:center;justify-content:center;}
+a{text-decoration:none;color:inherit;}
+
+.page{width:100%;max-width:900px;padding:52px 40px;}
+
+/* HEADER */
+.header{text-align:center;margin-bottom:52px;}
+.logo-wrap{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:20px;}
+.logo{width:52px;height:52px;border:2px solid var(--cyan);display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;color:var(--cyan);}
+.logo-name{font-size:28px;font-weight:800;color:var(--text);letter-spacing:-0.5px;}
+.logo-name span{background:var(--grad-cyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.header-tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--cyan);border:1px solid var(--border-2);padding:5px 16px;border-radius:50px;background:var(--cyan-glow);margin-bottom:14px;}
+.header-title{font-size:42px;font-weight:800;color:var(--text);letter-spacing:-1px;line-height:1.1;margin-bottom:10px;}
+.header-title span{background:var(--grad-cyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.header-meta{font-size:13px;color:var(--text-3);}
+.header-meta strong{color:var(--text-2);}
+
+/* DIVIDER */
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(51,173,229,0.3),transparent);margin:0 0 40px;}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px 26px;position:relative;overflow:hidden;transition:border-color 0.2s,transform 0.2s;}
+.card:hover{border-color:var(--border-2);transform:translateY(-2px);}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.card-1::before{background:var(--grad-cyan);}
+.card-2::before{background:linear-gradient(135deg,var(--purple),var(--cyan));}
+.card-3::before{background:linear-gradient(135deg,var(--yellow),var(--cyan));}
+.card-4::before{background:linear-gradient(135deg,var(--green),var(--cyan));}
+.card-num{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;margin-bottom:8px;}
+.card-1 .card-num{color:var(--cyan);}
+.card-2 .card-num{color:var(--purple);}
+.card-3 .card-num{color:var(--yellow);}
+.card-4 .card-num{color:var(--green);}
+.card-title{font-size:20px;font-weight:800;color:var(--text);letter-spacing:-0.3px;margin-bottom:8px;line-height:1.2;}
+.card-sub{font-size:12px;color:var(--text-3);line-height:1.5;margin-bottom:16px;}
+.card-topics{list-style:none;margin-bottom:18px;}
+.card-topics li{font-size:11px;color:var(--text-2);padding:4px 0 4px 14px;position:relative;border-bottom:1px solid var(--border);line-height:1.4;}
+.card-topics li:last-child{border-bottom:none;}
+.card-topics li::before{content:'›';position:absolute;left:0;font-weight:700;}
+.card-1 .card-topics li::before{color:var(--cyan);}
+.card-2 .card-topics li::before{color:var(--purple);}
+.card-3 .card-topics li::before{color:var(--yellow);}
+.card-4 .card-topics li::before{color:var(--green);}
+.card-cta{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:8px 18px;border-radius:50px;transition:all 0.2s;}
+.card-1 .card-cta{background:var(--cyan-glow);color:var(--cyan);border:1px solid var(--border-2);}
+.card-2 .card-cta{background:rgba(167,139,250,0.1);color:var(--purple);border:1px solid rgba(167,139,250,0.3);}
+.card-3 .card-cta{background:rgba(245,158,11,0.1);color:var(--yellow);border:1px solid rgba(245,158,11,0.3);}
+.card-4 .card-cta{background:rgba(16,185,129,0.1);color:var(--green);border:1px solid rgba(16,185,129,0.3);}
+.card-cta:hover{opacity:0.8;}
+.card-cta::after{content:'→';}
+
+/* CONTEXT LINK */
+.context-link{text-align:center;margin-bottom:32px;}
+.context-btn{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--text-3);border:1px solid var(--border);padding:8px 20px;border-radius:50px;transition:all 0.2s;}
+.context-btn:hover{border-color:var(--border-2);color:var(--cyan);}
+.context-btn::before{content:'◆';font-size:7px;color:var(--cyan);}
+
+/* FOOTER */
+footer{text-align:center;}
+.footer-rule{height:1px;background:linear-gradient(90deg,transparent,rgba(51,173,229,0.2),transparent);margin-bottom:16px;}
+.footer-text{font-size:10px;color:var(--text-4);letter-spacing:0.05em;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="logo-wrap">
+      <div class="logo">D</div>
+      <div class="logo-name">Dalton <span>Lab</span></div>
+    </div>
+    <div class="header-tag">Reunião de Sócios · 10 de Maio de 2026</div>
+    <h1 class="header-title">One-Pagers de<br><span>Alinhamento Estratégico</span></h1>
+    <p class="header-meta"><strong>Rodrigo Spinola</strong> (CEO) + <strong>Marcelo Ramos</strong> (COO) · Confidencial · Uso interno</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="cards">
+
+    <a href="ONEPAGER_01_DEFINICAO_AGENTE.html" class="card card-1">
+      <div class="card-num">1 de 4 · Definição</div>
+      <div class="card-title">O que é um Agente na Dalton Lab</div>
+      <div class="card-sub">Definição operacional rigorosa. Sem essa clareza, o comercial e o produto desmontam.</div>
+      <ul class="card-topics">
+        <li>Definição canônica com 6 critérios obrigatórios</li>
+        <li>AI Agent vs AI Workflow vs AI Assistant</li>
+        <li>3 Tiers (Lite, Standard, Critical) com critérios e pricing</li>
+        <li>O que NÃO é agente — filtro comercial</li>
+        <li>Regra de ouro para o comercial</li>
+      </ul>
+      <span class="card-cta">Abrir one-pager</span>
+    </a>
+
+    <a href="ONEPAGER_02_NOVA_OFERTA.html" class="card card-2">
+      <div class="card-num">2 de 4 · Oferta</div>
+      <div class="card-title">A Nova Oferta Dalton Lab</div>
+      <div class="card-sub">Dois produtos núcleo. Quatro camadas de pricing. Dois modos de entrega.</div>
+      <ul class="card-topics">
+        <li>Dalton Lab OS + Dalton Compass</li>
+        <li>4 camadas de pricing com tabela completa</li>
+        <li>BOT vs Managed Operation — quando aplicar cada</li>
+        <li>Pioneer Pricing: mecânica e Case Study Clause</li>
+        <li>Aplicação nos 4 prospects ativos</li>
+      </ul>
+      <span class="card-cta">Abrir one-pager</span>
+    </a>
+
+    <a href="ONEPAGER_03_PASSOS_ESTRATEGICOS.html" class="card card-3">
+      <div class="card-num">3 de 4 · Estratégia</div>
+      <div class="card-title">Os Próximos 90 Dias</div>
+      <div class="card-sub">5 prioridades estratégicas, 5 owners, e o que conscientemente não faremos.</div>
+      <ul class="card-topics">
+        <li>OS em 90 dias · Neogrid Pioneer · Programa de Partners</li>
+        <li>Web Summit Rio + conteúdo de categoria</li>
+        <li>Reformulação MakeOne, Rumo, Access Stage</li>
+        <li>O que NÃO faremos (5 itens claros)</li>
+        <li>Visão de 12 meses: ARR R$8–15M, NRR 110–130%</li>
+      </ul>
+      <span class="card-cta">Abrir one-pager</span>
+    </a>
+
+    <a href="ONEPAGER_04_PRIORIDADES_SEMANA.html" class="card card-4">
+      <div class="card-num">4 de 4 · Execução</div>
+      <div class="card-title">A Semana que Vem</div>
+      <div class="card-sub">8 decisões concretas, 5 dias, 2 owners principais. Foco em desbloqueio.</div>
+      <ul class="card-topics">
+        <li>Calendário de ações por dia (Seg–Sex)</li>
+        <li>8 decisões com checkbox e owner explícito</li>
+        <li>KPIs da semana: o que queremos ver até sexta</li>
+        <li>4 riscos principais a monitorar</li>
+      </ul>
+      <span class="card-cta">Abrir one-pager</span>
+    </a>
+
+  </div>
+
+  <div class="context-link">
+    <a href="../index.html" class="context-btn">Ver contexto estratégico completo Dalton Lab v2.0</a>
+  </div>
+
+  <footer>
+    <div class="footer-rule"></div>
+    <div class="footer-text">Confidencial · Uso exclusivo de Rodrigo Spinola e Marcelo Ramos · Dalton Lab · 10 de Maio de 2026</div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prioridades da Semana · Dalton Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #050d1c;
+  --bg-2: #0a1628;
+  --bg-3: #0f1f3a;
+  --card: rgba(15,31,58,0.7);
+  --card-h: rgba(20,41,72,0.9);
+  --border: rgba(51,173,229,0.12);
+  --border-2: rgba(51,173,229,0.3);
+  --text: #f0f9ff;
+  --text-2: #b6c7df;
+  --text-3: #6b7c95;
+  --text-4: #4a5670;
+  --cyan: #33ADE5;
+  --cyan-2: #5BC0F0;
+  --cyan-glow: rgba(51,173,229,0.15);
+  --green: #10b981;
+  --green-glow: rgba(16,185,129,0.15);
+  --yellow: #f59e0b;
+  --yellow-glow: rgba(245,158,11,0.15);
+  --red: #ef4444;
+  --purple: #a78bfa;
+  --grad-cyan: linear-gradient(135deg, #33ADE5 0%, #5BC0F0 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+
+.page{max-width:1100px;margin:0 auto;padding:32px 40px 40px;}
+
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+.header-left{display:flex;align-items:center;gap:14px;}
+.logo{width:40px;height:40px;border:2px solid var(--cyan);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:var(--cyan);flex-shrink:0;}
+.header-title{font-size:13px;font-weight:700;color:var(--text-2);}
+.header-subtitle{font-size:11px;color:var(--text-3);margin-top:2px;}
+.header-date{font-size:11px;color:var(--text-3);text-align:right;}
+.header-num{font-size:11px;font-weight:700;color:var(--cyan);margin-top:2px;letter-spacing:0.05em;text-align:right;}
+
+.hero{margin-bottom:22px;}
+.hero-tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--cyan);border:1px solid var(--border-2);padding:5px 14px;border-radius:50px;background:var(--cyan-glow);margin-bottom:12px;}
+.hero-title{font-size:36px;font-weight:800;color:var(--text);letter-spacing:-0.5px;line-height:1.1;margin-bottom:8px;}
+.hero-title span{background:var(--grad-cyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{font-size:14px;color:var(--text-2);line-height:1.5;}
+
+.section{margin-bottom:20px;}
+.section-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--cyan);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* CALENDAR */
+.calendar{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+.day-card{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.day-header{padding:8px 12px;background:rgba(51,173,229,0.08);border-bottom:1px solid var(--border);}
+.day-name{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.15em;color:var(--cyan);}
+.day-date{font-size:10px;color:var(--text-3);margin-top:1px;}
+.day-body{padding:10px 12px;display:flex;flex-direction:column;gap:6px;}
+.day-item{font-size:11px;color:var(--text-2);padding-left:12px;position:relative;line-height:1.4;}
+.day-item::before{content:'›';position:absolute;left:0;color:var(--cyan);font-weight:700;}
+.day-item .owner{display:inline-block;font-size:9px;font-weight:700;color:var(--text-3);background:rgba(255,255,255,0.04);border:1px solid var(--border);padding:1px 5px;border-radius:3px;margin-left:4px;vertical-align:middle;}
+.day-item strong{color:var(--text);font-weight:700;}
+.day-highlight{background:rgba(51,173,229,0.06);border-left:2px solid var(--cyan);padding:5px 8px;border-radius:0 4px 4px 0;font-size:11px;color:var(--text);font-weight:600;line-height:1.3;}
+
+/* DECISIONS */
+.decisions{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.decision{display:flex;align-items:flex-start;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 12px;}
+.checkbox{width:16px;height:16px;border:2px solid var(--border-2);border-radius:3px;flex-shrink:0;margin-top:1px;}
+.decision-text{font-size:11px;color:var(--text-2);line-height:1.4;}
+.decision-text strong{color:var(--text);font-weight:700;}
+.decision-owner{font-size:9px;color:var(--cyan);font-weight:700;margin-top:3px;}
+
+/* KPIS */
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+.kpi{background:linear-gradient(135deg,rgba(16,185,129,0.07),rgba(16,185,129,0.02));border:1px solid rgba(16,185,129,0.2);border-radius:8px;padding:10px 12px;}
+.kpi-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--green);margin-bottom:5px;}
+.kpi-text{font-size:11px;color:var(--text-2);line-height:1.4;}
+
+/* RISKS */
+.risks{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.risk{background:rgba(239,68,68,0.04);border:1px solid rgba(239,68,68,0.15);border-radius:8px;padding:10px 12px;}
+.risk-icon{font-size:12px;margin-bottom:4px;}
+.risk-title{font-size:11px;font-weight:700;color:var(--text-2);margin-bottom:3px;}
+.risk-desc{font-size:10px;color:var(--text-3);line-height:1.4;}
+
+footer{margin-top:20px;padding-top:14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.footer-left,.footer-right{font-size:10px;color:var(--text-4);}
+
+@media print{
+  body{background:#050d1c;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .page{padding:20px 28px;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="header-left">
+    <div class="logo">D</div>
+    <div>
+      <div class="header-title">Dalton Lab · Reunião de Sócios</div>
+      <div class="header-subtitle">Rodrigo Spinola · Marcelo Ramos</div>
+    </div>
+  </div>
+  <div>
+    <div class="header-date">10 de maio de 2026</div>
+    <div class="header-num">4 DE 4</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-tag">ONE-PAGER 4 DE 4 · EXECUÇÃO</div>
+  <h1 class="hero-title">A <span>Semana</span> que Vem</h1>
+  <p class="hero-sub">8 decisões que precisam acontecer. 5 dias. 2 owners principais. Foco em desbloqueio.</p>
+</section>
+
+<!-- SECTION 1: CALENDÁRIO -->
+<div class="section">
+  <div class="section-label">Ações por dia — semana de 11 a 16 de maio de 2026</div>
+  <div class="calendar">
+
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-name">Segunda</div>
+        <div class="day-date">11 de maio</div>
+      </div>
+      <div class="day-body">
+        <div class="day-highlight">Esta reunião de sócios</div>
+        <div class="day-item"><strong>Decisão Pioneer Pricing Neogrid</strong> <span class="owner">R+M+J</span></div>
+        <div class="day-item">Briefing Diego: OS roadmap 90 dias <span class="owner">Rodrigo</span></div>
+        <div class="day-item">Confirmar call assíncrono com Júlio <span class="owner">Rodrigo</span></div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-name">Terça</div>
+        <div class="day-date">12 de maio</div>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><strong>Marcelo finaliza proposta v2 Neogrid (PDF)</strong> <span class="owner">Marcelo</span></div>
+        <div class="day-item">Rodrigo valida proposta final <span class="owner">Rodrigo</span></div>
+        <div class="day-item">Agendar conversa Rogério (Partners) <span class="owner">Rodrigo</span></div>
+        <div class="day-item">Início reformulação proposta MakeOne <span class="owner">Marcelo</span></div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-name">Quarta</div>
+        <div class="day-date">13 de maio</div>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><strong>Envio proposta v2 para Bruno (Neogrid)</strong> <span class="owner">Rodrigo</span></div>
+        <div class="day-item">Reunião de produto com Diego (OS roadmap detalhado) <span class="owner">R+Diego</span></div>
+        <div class="day-item">Identificar candidato dev sênior <span class="owner">M+Diego</span></div>
+        <div class="day-item">Adicionar cláusula ativação Rumo + Access Stage <span class="owner">Marcelo</span></div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-name">Quinta</div>
+        <div class="day-date">14 de maio</div>
+      </div>
+      <div class="day-body">
+        <div class="day-item"><strong>Finalizar proposta MakeOne (BOT)</strong> <span class="owner">Marcelo</span></div>
+        <div class="day-item">Conversa Júlio: Strategy Memo (captação futura) <span class="owner">Rodrigo</span></div>
+        <div class="day-item">Follow-up Neogrid (confirmação recebimento) <span class="owner">Rodrigo</span></div>
+        <div class="day-item">Aprovação contratação dev sênior <span class="owner">Rodrigo</span></div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-name">Sexta</div>
+        <div class="day-date">15 de maio</div>
+      </div>
+      <div class="day-body">
+        <div class="day-item">Review da semana (sócios) <span class="owner">R+M</span></div>
+        <div class="day-item">Sinal para Gabi: conteúdo em pipeline <span class="owner">Rodrigo</span></div>
+        <div class="day-item">Update caixa semanal <span class="owner">Marcelo</span></div>
+        <div class="day-item">Ajustes propostas conforme feedbacks <span class="owner">Marcelo</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SECTION 2: DECISÕES -->
+<div class="section">
+  <div class="section-label">Decisões que precisam acontecer esta semana</div>
+  <div class="decisions">
+    <div class="decision">
+      <div class="checkbox"></div>
+      <div>
+        <div class="decision-text"><strong>Aprovação Pioneer Pricing Neogrid</strong> — R$ 35k Master + Build R$ 50–80k + Performance 25% (cap 3× OS anual)</div>
+        <div class="decision-owner">Owner: Rodrigo + Marcelo + Júlio</div>
+      </div>
+    </div>
+    <div class="decision">
+      <div class="checkbox"></div>
+      <div>
+        <div class="decision-text"><strong>Case Study Clause obrigatória</strong> — confirmação de que todo Pioneer exige contrapartida pública</div>
+        <div class="decision-owner">Owner: Rodrigo</div>
+      </div>
+    </div>
+    <div class="decision">
+      <div class="checkbox"></div>
+      <div>
+        <div class="decision-text"><strong>Envio proposta v2 Neogrid até quarta-feira</strong> — sem posterior a quinta</div>
+        <div class="decision-owner">Owner: Rodrigo (envio) + Marcelo (prep)</div>
+      </div>
+    </div>
+    <div class="decision">
+      <div class="checkbox"></div>
+      <div>
+        <div class="decision-text"><strong>Antecipar contratação dev sênior para junho</strong> — Diego não consegue OS em 90 dias sozinho</div>
+        <div class="decision-owner">Owner: Rodrigo (aprovação) + Diego (perfil)</div>
+      </div>
+    </div>
+    <div class="decision">
+      <div class="checkbox"></div>
+      <div>
+        <div class="decision-text"><strong>CSM em Q3</strong> — aprovar abertura de processo seletivo agora para não atrasar onboarding de clientes</div>
+        <div class="decision-owner">Owner: Rodrigo</div>
+      </div>
+    </div>
+    <div class="decision">
+      <div class="checkbox"></div>
+      <div>
+        <div class="decision-text"><strong>Agendar conversa Rodrigo + Júlio + Rogério</strong> — Programa de Partners, nas próximas 2–3 semanas</div>
+        <div class="decision-owner">Owner: Rodrigo</div>
+      </div>
+    </div>
+    <div class="decision">
+      <div class="checkbox"></div>
+      <div>
+        <div class="decision-text"><strong>Confirmar roadmap OS 90 dias com Diego</strong> — semana a semana, marcos claros, dependências mapeadas</div>
+        <div class="decision-owner">Owner: Rodrigo + Diego</div>
+      </div>
+    </div>
+    <div class="decision">
+      <div class="checkbox"></div>
+      <div>
+        <div class="decision-text"><strong>Adicionar cláusula de ativação em Rumo e Access Stage</strong> — pilotos sem cláusula têm risco alto de não converter</div>
+        <div class="decision-owner">Owner: Marcelo</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: KPIs DA SEMANA -->
+<div class="section">
+  <div class="section-label">Indicadores que queremos ver até sexta-feira</div>
+  <div class="kpis">
+    <div class="kpi">
+      <div class="kpi-label">✓ Proposta</div>
+      <div class="kpi-text">Proposta v2 Neogrid enviada para Bruno até quarta</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">✓ OS Roadmap</div>
+      <div class="kpi-text">Roadmap OS travado com Diego, semana a semana por 90 dias</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">✓ Partners</div>
+      <div class="kpi-text">Primeira conversa com Rogério agendada</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">✓ Pilotos</div>
+      <div class="kpi-text">Cláusula de ativação adicionada em Rumo e Access Stage</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">✓ MakeOne</div>
+      <div class="kpi-text">Proposta reformulada com modelo BOT + 4 camadas</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 4: RISCOS -->
+<div class="section">
+  <div class="section-label">Bloqueios e riscos a monitorar</div>
+  <div class="risks">
+    <div class="risk">
+      <div class="risk-icon">⚠</div>
+      <div class="risk-title">Neogrid: atraso interno</div>
+      <div class="risk-desc">Mudança de prioridade interna ou troca de stakeholder pode adiar assinatura. Monitorar com Bruno semanalmente.</div>
+    </div>
+    <div class="risk">
+      <div class="risk-icon">⚠</div>
+      <div class="risk-title">Capacity técnica de Diego</div>
+      <div class="risk-desc">Sem dev sênior antecipado, OS atrasa. Pior caso: OS não fica pronto em 90 dias e OS Subscription não entra no contrato.</div>
+    </div>
+    <div class="risk">
+      <div class="risk-icon">⚠</div>
+      <div class="risk-title">Estrutura de partnership</div>
+      <div class="risk-desc">Rogério pode querer estrutura que não cabe no Programa de Partners atual. Alinhar expectativas antes da conversa formal.</div>
+    </div>
+    <div class="risk">
+      <div class="risk-icon">⚠</div>
+      <div class="risk-title">Caixa antes da Neogrid</div>
+      <div class="risk-desc">Se Neogrid atrasar mais de 30 dias na assinatura, primeira parcela (50% do Build Fee) fica fora do caixa de junho. Monitorar com Marcelo.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">Confidencial · Uso interno · Dalton Lab</div>
+  <div class="footer-right">Rodrigo Spinola · CEO &amp; Founder</div>
+</footer>
+
+</div>
+</body>
+</html>

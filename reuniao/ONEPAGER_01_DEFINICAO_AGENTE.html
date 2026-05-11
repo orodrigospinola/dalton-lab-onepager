@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Definição de Agente · Dalton Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #050d1c;
+  --bg-2: #0a1628;
+  --bg-3: #0f1f3a;
+  --card: rgba(15,31,58,0.7);
+  --card-h: rgba(20,41,72,0.9);
+  --border: rgba(51,173,229,0.12);
+  --border-2: rgba(51,173,229,0.3);
+  --text: #f0f9ff;
+  --text-2: #b6c7df;
+  --text-3: #6b7c95;
+  --text-4: #4a5670;
+  --cyan: #33ADE5;
+  --cyan-2: #5BC0F0;
+  --cyan-glow: rgba(51,173,229,0.15);
+  --green: #10b981;
+  --green-glow: rgba(16,185,129,0.15);
+  --yellow: #f59e0b;
+  --yellow-glow: rgba(245,158,11,0.15);
+  --red: #ef4444;
+  --purple: #a78bfa;
+  --grad-cyan: linear-gradient(135deg, #33ADE5 0%, #5BC0F0 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+
+/* LAYOUT */
+.page{max-width:1100px;margin:0 auto;padding:32px 40px 40px;}
+
+/* HEADER */
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+.header-left{display:flex;align-items:center;gap:14px;}
+.logo{width:40px;height:40px;border:2px solid var(--cyan);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:var(--cyan);flex-shrink:0;}
+.header-title{font-size:13px;font-weight:700;color:var(--text-2);letter-spacing:0.02em;}
+.header-subtitle{font-size:11px;color:var(--text-3);margin-top:2px;}
+.header-right{text-align:right;}
+.header-date{font-size:11px;color:var(--text-3);}
+.header-num{font-size:11px;font-weight:700;color:var(--cyan);margin-top:2px;letter-spacing:0.05em;}
+
+/* HERO */
+.hero{margin-bottom:24px;}
+.hero-tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--cyan);border:1px solid var(--border-2);padding:5px 14px;border-radius:50px;background:var(--cyan-glow);margin-bottom:12px;}
+.hero-title{font-size:36px;font-weight:800;color:var(--text);letter-spacing:-0.5px;line-height:1.1;margin-bottom:8px;}
+.hero-title span{background:var(--grad-cyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{font-size:14px;color:var(--text-2);line-height:1.5;max-width:700px;}
+
+/* SECTIONS */
+.section{margin-bottom:20px;}
+.section-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--cyan);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* DEFINITION BOX */
+.def-box{background:linear-gradient(135deg,rgba(51,173,229,0.08),rgba(51,173,229,0.03));border:1px solid var(--border-2);border-left:4px solid var(--cyan);padding:16px 20px;border-radius:0 8px 8px 0;}
+.def-box p{font-size:14px;font-weight:500;color:var(--text);line-height:1.6;font-style:italic;}
+
+/* CRITERIA GRID */
+.criteria-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.criterion{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 14px;}
+.criterion-num{font-size:22px;font-weight:800;background:var(--grad-cyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:4px;}
+.criterion-title{font-size:12px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.criterion-desc{font-size:11px;color:var(--text-3);line-height:1.4;}
+
+/* COMPARISON TABLE */
+.table-wrap{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:12px;}
+thead tr{background:rgba(51,173,229,0.08);}
+th{padding:9px 12px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--cyan);border-bottom:1px solid var(--border-2);}
+td{padding:9px 12px;color:var(--text-2);border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4;}
+tr:last-child td{border-bottom:none;}
+.td-cat{font-weight:700;color:var(--text);}
+.badge{display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:2px 8px;border-radius:50px;}
+.badge-yes{background:var(--green-glow);color:var(--green);border:1px solid rgba(16,185,129,0.3);}
+.badge-no{background:rgba(239,68,68,0.08);color:var(--red);border:1px solid rgba(239,68,68,0.2);}
+.badge-maybe{background:var(--yellow-glow);color:var(--yellow);border:1px solid rgba(245,158,11,0.3);}
+.badge-agent{background:linear-gradient(135deg,rgba(51,173,229,0.15),rgba(91,192,240,0.1));color:var(--cyan);border:1px solid var(--border-2);}
+
+/* TIERS */
+.tiers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.tier-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 16px;position:relative;overflow:hidden;}
+.tier-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.tier-1::before{background:var(--cyan);}
+.tier-2::before{background:var(--purple);}
+.tier-3::before{background:linear-gradient(90deg,var(--yellow),var(--red));}
+.tier-tag{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:6px;}
+.tier-1 .tier-tag{color:var(--cyan);}
+.tier-2 .tier-tag{color:var(--purple);}
+.tier-3 .tier-tag{color:var(--yellow);}
+.tier-name{font-size:15px;font-weight:800;color:var(--text);margin-bottom:8px;}
+.tier-rows{display:flex;flex-direction:column;gap:4px;margin-bottom:10px;}
+.tier-row{display:flex;gap:6px;font-size:11px;}
+.tier-row-label{color:var(--text-3);min-width:62px;flex-shrink:0;}
+.tier-row-val{color:var(--text-2);}
+.tier-price{font-size:16px;font-weight:800;margin-top:8px;padding-top:8px;border-top:1px solid var(--border);}
+.tier-1 .tier-price{color:var(--cyan);}
+.tier-2 .tier-price{color:var(--purple);}
+.tier-3 .tier-price{color:var(--yellow);}
+.tier-example{font-size:10px;color:var(--text-3);margin-top:3px;}
+
+/* NOT AGENT */
+.not-agent-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+.not-item{background:rgba(239,68,68,0.04);border:1px solid rgba(239,68,68,0.15);border-radius:8px;padding:10px 12px;}
+.not-icon{font-size:14px;margin-bottom:4px;color:var(--red);opacity:0.8;}
+.not-title{font-size:11px;font-weight:700;color:var(--text-2);margin-bottom:3px;}
+.not-why{font-size:10px;color:var(--text-3);line-height:1.4;}
+
+/* GOLDEN RULE */
+.rule-box{background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(16,185,129,0.03));border:1px solid rgba(16,185,129,0.25);border-left:4px solid var(--green);padding:14px 18px;border-radius:0 8px 8px 0;}
+.rule-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--green);margin-bottom:6px;}
+.rule-text{font-size:12px;color:var(--text-2);line-height:1.6;}
+.rule-text strong{color:var(--text);font-weight:700;}
+
+/* FOOTER */
+footer{margin-top:24px;padding-top:14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.footer-left{font-size:10px;color:var(--text-4);}
+.footer-right{font-size:10px;color:var(--text-4);text-align:right;}
+
+@media print {
+  body{background:#050d1c;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .page{padding:20px 28px;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="header-left">
+    <div class="logo">D</div>
+    <div>
+      <div class="header-title">Dalton Lab · Reunião de Sócios</div>
+      <div class="header-subtitle">Rodrigo Spinola · Marcelo Ramos</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="header-date">10 de maio de 2026</div>
+    <div class="header-num">1 DE 4</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-tag">ONE-PAGER 1 DE 4 · DEFINIÇÃO</div>
+  <h1 class="hero-title">O que é um <span>Agente</span> na Dalton Lab</h1>
+  <p class="hero-sub">Definição operacional rigorosa. Diferenciação clara de AI Workflow e AI Assistant. Sistema de 3 Tiers para pricing. Sem essa clareza, o comercial e o produto desmontam.</p>
+</section>
+
+<!-- SECTION 1: DEFINIÇÃO -->
+<div class="section">
+  <div class="section-label">Definição canônica (seção 5.1)</div>
+  <div class="def-box">
+    <p>"Um Agente é uma entidade computacional que executa uma função de negócio específica com autonomia operacional, mantendo estado, usando ferramentas, e sendo supervisionado por um humano ou time responsável."</p>
+  </div>
+</div>
+
+<!-- SECTION 2: 6 CRITÉRIOS -->
+<div class="section">
+  <div class="section-label">Os 6 critérios obrigatórios — todos precisam estar presentes</div>
+  <div class="criteria-grid">
+    <div class="criterion">
+      <div class="criterion-num">01</div>
+      <div class="criterion-title">Função de negócio definida</div>
+      <div class="criterion-desc">Substitui ou amplifica trabalho humano específico. Não é uma feature genérica.</div>
+    </div>
+    <div class="criterion">
+      <div class="criterion-num">02</div>
+      <div class="criterion-title">Autonomia dentro do escopo</div>
+      <div class="criterion-desc">Toma decisões sem aprovação a cada passo. Pode escalar em pontos críticos.</div>
+    </div>
+    <div class="criterion">
+      <div class="criterion-num">03</div>
+      <div class="criterion-title">Estado / Memória</div>
+      <div class="criterion-desc">Mantém contexto entre execuções: histórico, decisões anteriores, preferências.</div>
+    </div>
+    <div class="criterion">
+      <div class="criterion-num">04</div>
+      <div class="criterion-title">Uso de ferramentas</div>
+      <div class="criterion-desc">Acesso a APIs, sistemas internos, LLMs, bancos de dados. Executa com elas.</div>
+    </div>
+    <div class="criterion">
+      <div class="criterion-num">05</div>
+      <div class="criterion-title">Métricas auditáveis</div>
+      <div class="criterion-desc">Produz outputs verificáveis: volume, taxa de sucesso, saving, tempo médio.</div>
+    </div>
+    <div class="criterion">
+      <div class="criterion-num">06</div>
+      <div class="criterion-title">Supervisão humana atribuída</div>
+      <div class="criterion-desc">Tem um humano ou time responsável. Não roda solto sem governança.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: COMPARAÇÃO -->
+<div class="section">
+  <div class="section-label">As 3 categorias de entidades cognitivas (todas vivem no OS)</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Categoria</th>
+          <th>Definição curta</th>
+          <th>Exemplo</th>
+          <th>Build &amp; Transfer?</th>
+          <th>OS Subscription?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-cat">AI Assistant</td>
+          <td>LLM + base de conhecimento. Sem ferramentas integradas, sem autonomia, sem estado entre sessões.</td>
+          <td>Claude Project jurídico, Custom GPT de redação</td>
+          <td><span class="badge badge-no">Não</span> — cliente cria sozinho</td>
+          <td><span class="badge badge-yes">Sim</span> — agregado no Strategic Ops Fee</td>
+        </tr>
+        <tr>
+          <td class="td-cat">AI Workflow</td>
+          <td>Automação com LLM em pontos críticos. Ferramentas leves. Sem autonomia complexa.</td>
+          <td>Zap com Claude, n8n com classificação LLM</td>
+          <td><span class="badge badge-maybe">Possível</span> — mas leve</td>
+          <td><span class="badge badge-yes">Sim</span> — R$ 300–800/mês por workflow</td>
+        </tr>
+        <tr>
+          <td class="td-cat" style="color:var(--cyan);">AI Agent</td>
+          <td>Entidade autônoma com objetivo, ferramentas, estado e métricas. Atende todos os 6 critérios.</td>
+          <td>Agente de cobrança, FP&amp;A, qualificação de leads</td>
+          <td><span class="badge badge-agent">Sim — full Build &amp; Transfer</span></td>
+          <td><span class="badge badge-agent">Sim — R$ 2–5k/mês por agente</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SECTION 4: TIERS -->
+<div class="section">
+  <div class="section-label">Os 3 Tiers de Agente — classificar no kickoff, define pricing</div>
+  <div class="tiers-grid">
+    <div class="tier-card tier-1">
+      <div class="tier-tag">Tier 1</div>
+      <div class="tier-name">Lite</div>
+      <div class="tier-rows">
+        <div class="tier-row"><span class="tier-row-label">Ferramentas</span><span class="tier-row-val">1–3 ferramentas, decisões simples</span></div>
+        <div class="tier-row"><span class="tier-row-label">Volume</span><span class="tier-row-val">Menos de 500 execuções/mês</span></div>
+        <div class="tier-row"><span class="tier-row-label">Criticidade</span><span class="tier-row-val">Erro tem impacto baixo (informativo)</span></div>
+      </div>
+      <div class="tier-price">R$ 25–50k</div>
+      <div class="tier-example">Ex: Classificador de leads</div>
+    </div>
+    <div class="tier-card tier-2">
+      <div class="tier-tag">Tier 2</div>
+      <div class="tier-name">Standard</div>
+      <div class="tier-rows">
+        <div class="tier-row"><span class="tier-row-label">Ferramentas</span><span class="tier-row-val">4–7 ferramentas, decisões multi-step</span></div>
+        <div class="tier-row"><span class="tier-row-label">Volume</span><span class="tier-row-val">500–5.000 execuções/mês</span></div>
+        <div class="tier-row"><span class="tier-row-label">Criticidade</span><span class="tier-row-val">Erro com impacto operacional, ajustável</span></div>
+      </div>
+      <div class="tier-price">R$ 60–120k</div>
+      <div class="tier-example">Ex: Agente de cobrança N1, Onboarding B2B</div>
+    </div>
+    <div class="tier-card tier-3">
+      <div class="tier-tag">Tier 3</div>
+      <div class="tier-name">Critical</div>
+      <div class="tier-rows">
+        <div class="tier-row"><span class="tier-row-label">Ferramentas</span><span class="tier-row-val">8+ ferramentas, aprovação multi-stakeholder</span></div>
+        <div class="tier-row"><span class="tier-row-label">Volume</span><span class="tier-row-val">5.000+ execuções/mês</span></div>
+        <div class="tier-row"><span class="tier-row-label">Criticidade</span><span class="tier-row-val">Erro financeiro, regulatório ou reputacional</span></div>
+      </div>
+      <div class="tier-price">R$ 150–300k</div>
+      <div class="tier-example">Ex: Reconciliação fiscal, FP&amp;A</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 5: O QUE NÃO É AGENTE -->
+<div class="section">
+  <div class="section-label">O que NÃO é Agente — deixar explícito no contrato</div>
+  <div class="not-agent-grid">
+    <div class="not-item">
+      <div class="not-icon">✕</div>
+      <div class="not-title">Prompt único</div>
+      <div class="not-why">Chamada de modelo. Sem estado, sem ferramentas, sem autonomia.</div>
+    </div>
+    <div class="not-item">
+      <div class="not-icon">✕</div>
+      <div class="not-title">RPA tradicional</div>
+      <div class="not-why">Sem decisão por LLM, sem aprendizado contextual.</div>
+    </div>
+    <div class="not-item">
+      <div class="not-icon">✕</div>
+      <div class="not-title">Chatbot de FAQ</div>
+      <div class="not-why">Sem decisões, sem ferramentas, sem alteração no mundo.</div>
+    </div>
+    <div class="not-item">
+      <div class="not-icon">✕</div>
+      <div class="not-title">Função Zapier/Make</div>
+      <div class="not-why">Integração leve. Classifica como AI Workflow, não Agente.</div>
+    </div>
+    <div class="not-item">
+      <div class="not-icon">✕</div>
+      <div class="not-title">Script agendado</div>
+      <div class="not-why">Automação simples de relatório. Sem agente, sem autonomia.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 6: REGRA DE OURO -->
+<div class="section">
+  <div class="section-label">Regra de ouro para o comercial</div>
+  <div class="rule-box">
+    <div class="rule-label">Filtro antes de proposta</div>
+    <p class="rule-text">Quando um prospect descrever uma necessidade, <strong>classificar primeiro em AI Assistant, AI Workflow ou AI Agent</strong>. O Build &amp; Transfer só se aplica a Agentes que atendem aos 6 critérios. Workflows leves entram via OS Subscription (R$ 300–800/mês). Assistants entram via Strategic Operations Fee. <strong>Nunca cobrar Build &amp; Transfer por algo que não atende à definição.</strong></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">Confidencial · Uso interno · Dalton Lab</div>
+  <div class="footer-right">Rodrigo Spinola · CEO &amp; Founder</div>
+</footer>
+
+</div>
+</body>
+</html>

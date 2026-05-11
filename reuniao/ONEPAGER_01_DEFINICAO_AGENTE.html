@@ -3,325 +3,225 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Definição de Agente · Dalton Lab</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>1 · Definição de Agente — Dalton Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #050d1c;
-  --bg-2: #0a1628;
-  --bg-3: #0f1f3a;
-  --card: rgba(15,31,58,0.7);
-  --card-h: rgba(20,41,72,0.9);
-  --border: rgba(51,173,229,0.12);
-  --border-2: rgba(51,173,229,0.3);
-  --text: #f0f9ff;
-  --text-2: #b6c7df;
-  --text-3: #6b7c95;
-  --text-4: #4a5670;
-  --cyan: #33ADE5;
-  --cyan-2: #5BC0F0;
-  --cyan-glow: rgba(51,173,229,0.15);
-  --green: #10b981;
-  --green-glow: rgba(16,185,129,0.15);
-  --yellow: #f59e0b;
-  --yellow-glow: rgba(245,158,11,0.15);
-  --red: #ef4444;
-  --purple: #a78bfa;
-  --grad-cyan: linear-gradient(135deg, #33ADE5 0%, #5BC0F0 100%);
+:root{
+  --bg:#050d1c;--s1:#0a1628;--s2:#0f1f3a;
+  --card:rgba(15,31,58,0.75);
+  --b1:rgba(51,173,229,0.12);--b2:rgba(51,173,229,0.32);
+  --t0:#f0f9ff;--t1:#b6c7df;--t2:#6b7c95;--t3:#3a4d65;
+  --cy:#33ADE5;--cy2:rgba(51,173,229,0.14);
+  --gr:#10b981;--gr2:rgba(16,185,129,0.13);
+  --ye:#f59e0b;--ye2:rgba(245,158,11,0.13);
+  --re:#ef4444;--re2:rgba(239,68,68,0.08);
+  --pu:#a78bfa;
+  --gcyan:linear-gradient(135deg,#33ADE5,#5BC0F0);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+html{font-size:13px;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t0);min-height:100vh;-webkit-font-smoothing:antialiased;}
 a{color:inherit;text-decoration:none;}
-
-/* LAYOUT */
-.page{max-width:1100px;margin:0 auto;padding:32px 40px 40px;}
+.page{max-width:1080px;margin:0 auto;padding:28px 36px 36px;}
 
 /* HEADER */
-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--border);}
-.header-left{display:flex;align-items:center;gap:14px;}
-.logo-img{width:44px;height:44px;flex-shrink:0;}
-.header-title{font-size:13px;font-weight:700;color:var(--text-2);letter-spacing:0.02em;}
-.header-subtitle{font-size:11px;color:var(--text-3);margin-top:2px;}
-.header-right{text-align:right;}
-.header-date{font-size:11px;color:var(--text-3);}
-.header-num{font-size:11px;font-weight:700;color:var(--cyan);margin-top:2px;letter-spacing:0.05em;}
+header{display:flex;align-items:center;justify-content:space-between;padding-bottom:16px;margin-bottom:22px;border-bottom:1px solid var(--b1);}
+.hl{display:flex;align-items:center;gap:12px;}
+.logo{width:40px;height:40px;flex-shrink:0;border-radius:10px;}
+.htext .htitle{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--t1);letter-spacing:0.01em;}
+.htext .hsub{font-size:11px;color:var(--t2);margin-top:1px;}
+.hr{text-align:right;}
+.hr .hdate{font-size:11px;color:var(--t2);}
+.hr .hnum{font-size:11px;font-weight:600;color:var(--cy);margin-top:2px;letter-spacing:0.06em;}
 
 /* HERO */
-.hero{margin-bottom:24px;}
-.hero-tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--cyan);border:1px solid var(--border-2);padding:5px 14px;border-radius:50px;background:var(--cyan-glow);margin-bottom:12px;}
-.hero-title{font-size:36px;font-weight:800;color:var(--text);letter-spacing:-0.5px;line-height:1.1;margin-bottom:8px;}
-.hero-title span{background:var(--grad-cyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hero-sub{font-size:14px;color:var(--text-2);line-height:1.5;max-width:700px;}
+.hero{margin-bottom:20px;}
+.tag{display:inline-block;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.22em;color:var(--cy);border:1px solid var(--b2);padding:4px 12px;border-radius:40px;background:var(--cy2);margin-bottom:10px;}
+h1{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;letter-spacing:-0.5px;line-height:1.1;margin-bottom:7px;}
+h1 span{background:var(--gcyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero p{font-size:13px;color:var(--t1);line-height:1.55;max-width:680px;}
 
-/* SECTIONS */
-.section{margin-bottom:20px;}
-.section-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--cyan);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
-.section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+/* SECTION */
+.sec{margin-bottom:18px;}
+.slabel{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.22em;color:var(--cy);margin-bottom:9px;display:flex;align-items:center;gap:8px;}
+.slabel::after{content:'';flex:1;height:1px;background:var(--b1);}
 
-/* DEFINITION BOX */
-.def-box{background:linear-gradient(135deg,rgba(51,173,229,0.08),rgba(51,173,229,0.03));border:1px solid var(--border-2);border-left:4px solid var(--cyan);padding:16px 20px;border-radius:0 8px 8px 0;}
-.def-box p{font-size:14px;font-weight:500;color:var(--text);line-height:1.6;font-style:italic;}
+/* DEF BOX */
+.defbox{background:linear-gradient(135deg,rgba(51,173,229,0.07),rgba(51,173,229,0.02));border:1px solid var(--b2);border-left:3px solid var(--cy);padding:13px 18px;border-radius:0 8px 8px 0;}
+.defbox p{font-size:13px;font-weight:500;color:var(--t0);line-height:1.6;font-style:italic;}
 
 /* CRITERIA GRID */
-.criteria-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
-.criterion{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 14px;}
-.criterion-num{font-size:22px;font-weight:800;background:var(--grad-cyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:4px;}
-.criterion-title{font-size:12px;font-weight:700;color:var(--text);margin-bottom:3px;}
-.criterion-desc{font-size:11px;color:var(--text-3);line-height:1.4;}
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.crit{background:var(--card);border:1px solid var(--b1);border-radius:8px;padding:11px 13px;}
+.crit-n{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;background:var(--gcyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:4px;}
+.crit-t{font-size:12px;font-weight:600;color:var(--t0);margin-bottom:2px;}
+.crit-d{font-size:11px;color:var(--t2);line-height:1.4;}
 
-/* COMPARISON TABLE */
-.table-wrap{overflow-x:auto;}
-table{width:100%;border-collapse:collapse;font-size:12px;}
-thead tr{background:rgba(51,173,229,0.08);}
-th{padding:9px 12px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--cyan);border-bottom:1px solid var(--border-2);}
-td{padding:9px 12px;color:var(--text-2);border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4;}
+/* TABLE */
+.tw{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:11.5px;}
+thead tr{background:rgba(51,173,229,0.06);}
+th{padding:8px 11px;text-align:left;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.16em;color:var(--cy);border-bottom:1px solid var(--b2);}
+td{padding:8px 11px;color:var(--t1);border-bottom:1px solid var(--b1);vertical-align:top;line-height:1.4;}
 tr:last-child td{border-bottom:none;}
-.td-cat{font-weight:700;color:var(--text);}
-.badge{display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:2px 8px;border-radius:50px;}
-.badge-yes{background:var(--green-glow);color:var(--green);border:1px solid rgba(16,185,129,0.3);}
-.badge-no{background:rgba(239,68,68,0.08);color:var(--red);border:1px solid rgba(239,68,68,0.2);}
-.badge-maybe{background:var(--yellow-glow);color:var(--yellow);border:1px solid rgba(245,158,11,0.3);}
-.badge-agent{background:linear-gradient(135deg,rgba(51,173,229,0.15),rgba(91,192,240,0.1));color:var(--cyan);border:1px solid var(--border-2);}
+.tdb{font-weight:600;color:var(--t0);}
+.badge{display:inline-block;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;padding:2px 7px;border-radius:40px;}
+.bY{background:var(--gr2);color:var(--gr);border:1px solid rgba(16,185,129,0.28);}
+.bN{background:var(--re2);color:var(--re);border:1px solid rgba(239,68,68,0.22);}
+.bM{background:var(--ye2);color:var(--ye);border:1px solid rgba(245,158,11,0.28);}
+.bA{background:var(--cy2);color:var(--cy);border:1px solid var(--b2);}
 
 /* TIERS */
-.tiers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-.tier-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 16px;position:relative;overflow:hidden;}
-.tier-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
-.tier-1::before{background:var(--cyan);}
-.tier-2::before{background:var(--purple);}
-.tier-3::before{background:linear-gradient(90deg,var(--yellow),var(--red));}
-.tier-tag{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:6px;}
-.tier-1 .tier-tag{color:var(--cyan);}
-.tier-2 .tier-tag{color:var(--purple);}
-.tier-3 .tier-tag{color:var(--yellow);}
-.tier-name{font-size:15px;font-weight:800;color:var(--text);margin-bottom:8px;}
-.tier-rows{display:flex;flex-direction:column;gap:4px;margin-bottom:10px;}
-.tier-row{display:flex;gap:6px;font-size:11px;}
-.tier-row-label{color:var(--text-3);min-width:62px;flex-shrink:0;}
-.tier-row-val{color:var(--text-2);}
-.tier-price{font-size:16px;font-weight:800;margin-top:8px;padding-top:8px;border-top:1px solid var(--border);}
-.tier-1 .tier-price{color:var(--cyan);}
-.tier-2 .tier-price{color:var(--purple);}
-.tier-3 .tier-price{color:var(--yellow);}
-.tier-example{font-size:10px;color:var(--text-3);margin-top:3px;}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.tier{background:var(--card);border:1px solid var(--b1);border-radius:8px;padding:12px 14px;position:relative;overflow:hidden;}
+.tier::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.t1::before{background:var(--cy);}
+.t2::before{background:var(--pu);}
+.t3::before{background:linear-gradient(90deg,var(--ye),var(--re));}
+.tier-tag{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.16em;margin-bottom:4px;}
+.t1 .tier-tag{color:var(--cy);}
+.t2 .tier-tag{color:var(--pu);}
+.t3 .tier-tag{color:var(--ye);}
+.tier-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--t0);margin-bottom:7px;}
+.tier-row{display:flex;gap:6px;font-size:11px;margin-bottom:3px;}
+.tier-rl{color:var(--t2);min-width:68px;flex-shrink:0;}
+.tier-rv{color:var(--t1);}
+.tier-price{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;margin-top:8px;padding-top:7px;border-top:1px solid var(--b1);}
+.t1 .tier-price{color:var(--cy);}
+.t2 .tier-price{color:var(--pu);}
+.t3 .tier-price{color:var(--ye);}
+.tier-ex{font-size:10px;color:var(--t2);margin-top:2px;}
 
 /* NOT AGENT */
-.not-agent-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
-.not-item{background:rgba(239,68,68,0.04);border:1px solid rgba(239,68,68,0.15);border-radius:8px;padding:10px 12px;}
-.not-icon{font-size:14px;margin-bottom:4px;color:var(--red);opacity:0.8;}
-.not-title{font-size:11px;font-weight:700;color:var(--text-2);margin-bottom:3px;}
-.not-why{font-size:10px;color:var(--text-3);line-height:1.4;}
+.nagrid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;}
+.nai{background:var(--re2);border:1px solid rgba(239,68,68,0.15);border-radius:8px;padding:9px 11px;}
+.nai-t{font-size:11px;font-weight:600;color:var(--t1);margin-bottom:2px;}
+.nai-d{font-size:10px;color:var(--t2);line-height:1.4;}
 
-/* GOLDEN RULE */
-.rule-box{background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(16,185,129,0.03));border:1px solid rgba(16,185,129,0.25);border-left:4px solid var(--green);padding:14px 18px;border-radius:0 8px 8px 0;}
-.rule-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--green);margin-bottom:6px;}
-.rule-text{font-size:12px;color:var(--text-2);line-height:1.6;}
-.rule-text strong{color:var(--text);font-weight:700;}
+/* RULE */
+.rulebox{background:linear-gradient(135deg,rgba(16,185,129,0.07),rgba(16,185,129,0.02));border:1px solid rgba(16,185,129,0.24);border-left:3px solid var(--gr);padding:12px 17px;border-radius:0 8px 8px 0;}
+.rule-lbl{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.18em;color:var(--gr);margin-bottom:5px;}
+.rulebox p{font-size:12px;color:var(--t1);line-height:1.6;}
+.rulebox strong{color:var(--t0);}
 
 /* FOOTER */
-footer{margin-top:24px;padding-top:14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
-.footer-left{font-size:10px;color:var(--text-4);}
-.footer-right{font-size:10px;color:var(--text-4);text-align:right;}
+footer{margin-top:20px;padding-top:12px;border-top:1px solid var(--b1);display:flex;justify-content:space-between;}
+footer span{font-size:10px;color:var(--t3);}
 
-@media print {
-  body{background:#050d1c;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-  .page{padding:20px 28px;}
-}
+@media print{body{background:#050d1c;-webkit-print-color-adjust:exact;print-color-adjust:exact;}.page{padding:18px 26px;}}
 </style>
 </head>
 <body>
 <div class="page">
 
 <header>
-  <div class="header-left">
-    <img src="logo-d-white.svg" class="logo-img" alt="Dalton Lab">
-    <div>
-      <div class="header-title">Dalton Lab · Reunião de Sócios</div>
-      <div class="header-subtitle">Rodrigo Spinola · Marcelo Ramos</div>
+  <div class="hl">
+    <img src="data:image/png;base64,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" class="logo" alt="Dalton Lab">
+    <div class="htext">
+      <div class="htitle">Dalton Lab · Reunião de Sócios</div>
+      <div class="hsub">Rodrigo Spinola · Marcelo Ramos · Confidencial</div>
     </div>
   </div>
-  <div class="header-right">
-    <div class="header-date">10 de maio de 2026</div>
-    <div class="header-num">1 DE 4</div>
+  <div class="hr">
+    <div class="hdate">10 de maio de 2026</div>
+    <div class="hnum">1 DE 4</div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-tag">ONE-PAGER 1 DE 4 · DEFINIÇÃO</div>
-  <h1 class="hero-title">O que é um <span>Agente</span> na Dalton Lab</h1>
-  <p class="hero-sub">Definição operacional rigorosa. Diferenciação clara de AI Workflow e AI Assistant. Sistema de 3 Tiers para pricing. Sem essa clareza, o comercial e o produto desmontam.</p>
-</section>
+<div class="hero">
+  <div class="tag">Definição</div>
+  <h1>O que é um <span>Agente</span> na Dalton Lab</h1>
+  <p>Definição operacional com 6 critérios, 3 categorias e 3 tiers. Sem essa clareza, o comercial e o produto desmontam.</p>
+</div>
 
-<!-- SECTION 1: DEFINIÇÃO -->
-<div class="section">
-  <div class="section-label">Definição canônica (seção 5.1)</div>
-  <div class="def-box">
+<div class="sec">
+  <div class="slabel">Definição canônica</div>
+  <div class="defbox">
     <p>"Um Agente é uma entidade computacional que executa uma função de negócio específica com autonomia operacional, mantendo estado, usando ferramentas, e sendo supervisionado por um humano ou time responsável."</p>
   </div>
 </div>
 
-<!-- SECTION 2: 6 CRITÉRIOS -->
-<div class="section">
-  <div class="section-label">Os 6 critérios obrigatórios — todos precisam estar presentes</div>
-  <div class="criteria-grid">
-    <div class="criterion">
-      <div class="criterion-num">01</div>
-      <div class="criterion-title">Função de negócio definida</div>
-      <div class="criterion-desc">Substitui ou amplifica trabalho humano específico. Não é uma feature genérica.</div>
-    </div>
-    <div class="criterion">
-      <div class="criterion-num">02</div>
-      <div class="criterion-title">Autonomia dentro do escopo</div>
-      <div class="criterion-desc">Toma decisões sem aprovação a cada passo. Pode escalar em pontos críticos.</div>
-    </div>
-    <div class="criterion">
-      <div class="criterion-num">03</div>
-      <div class="criterion-title">Estado / Memória</div>
-      <div class="criterion-desc">Mantém contexto entre execuções: histórico, decisões anteriores, preferências.</div>
-    </div>
-    <div class="criterion">
-      <div class="criterion-num">04</div>
-      <div class="criterion-title">Uso de ferramentas</div>
-      <div class="criterion-desc">Acesso a APIs, sistemas internos, LLMs, bancos de dados. Executa com elas.</div>
-    </div>
-    <div class="criterion">
-      <div class="criterion-num">05</div>
-      <div class="criterion-title">Métricas auditáveis</div>
-      <div class="criterion-desc">Produz outputs verificáveis: volume, taxa de sucesso, saving, tempo médio.</div>
-    </div>
-    <div class="criterion">
-      <div class="criterion-num">06</div>
-      <div class="criterion-title">Supervisão humana atribuída</div>
-      <div class="criterion-desc">Tem um humano ou time responsável. Não roda solto sem governança.</div>
-    </div>
+<div class="sec">
+  <div class="slabel">6 critérios obrigatórios — todos precisam estar presentes</div>
+  <div class="cgrid">
+    <div class="crit"><div class="crit-n">01</div><div class="crit-t">Função de negócio</div><div class="crit-d">Substitui ou amplifica trabalho humano específico.</div></div>
+    <div class="crit"><div class="crit-n">02</div><div class="crit-t">Autonomia no escopo</div><div class="crit-d">Toma decisões sem aprovação a cada passo.</div></div>
+    <div class="crit"><div class="crit-n">03</div><div class="crit-t">Estado / Memória</div><div class="crit-d">Mantém contexto entre execuções.</div></div>
+    <div class="crit"><div class="crit-n">04</div><div class="crit-t">Uso de ferramentas</div><div class="crit-d">Acessa APIs, sistemas e bancos de dados.</div></div>
+    <div class="crit"><div class="crit-n">05</div><div class="crit-t">Métricas auditáveis</div><div class="crit-d">Volume, taxa de sucesso, saving, tempo médio.</div></div>
+    <div class="crit"><div class="crit-n">06</div><div class="crit-t">Supervisão humana</div><div class="crit-d">Um humano ou time responsável atribuído.</div></div>
   </div>
 </div>
 
-<!-- SECTION 3: COMPARAÇÃO -->
-<div class="section">
-  <div class="section-label">As 3 categorias de entidades cognitivas (todas vivem no OS)</div>
-  <div class="table-wrap">
+<div class="sec">
+  <div class="slabel">3 categorias de entidades — todas vivem no OS</div>
+  <div class="tw">
     <table>
-      <thead>
-        <tr>
-          <th>Categoria</th>
-          <th>Definição curta</th>
-          <th>Exemplo</th>
-          <th>Build &amp; Transfer?</th>
-          <th>OS Subscription?</th>
-        </tr>
-      </thead>
+      <thead><tr><th>Categoria</th><th>O que é</th><th>Exemplo</th><th>Build &amp; Transfer?</th><th>OS Subscription?</th></tr></thead>
       <tbody>
-        <tr>
-          <td class="td-cat">AI Assistant</td>
-          <td>LLM + base de conhecimento. Sem ferramentas integradas, sem autonomia, sem estado entre sessões.</td>
-          <td>Claude Project jurídico, Custom GPT de redação</td>
-          <td><span class="badge badge-no">Não</span> — cliente cria sozinho</td>
-          <td><span class="badge badge-yes">Sim</span> — agregado no Strategic Ops Fee</td>
-        </tr>
-        <tr>
-          <td class="td-cat">AI Workflow</td>
-          <td>Automação com LLM em pontos críticos. Ferramentas leves. Sem autonomia complexa.</td>
-          <td>Zap com Claude, n8n com classificação LLM</td>
-          <td><span class="badge badge-maybe">Possível</span> — mas leve</td>
-          <td><span class="badge badge-yes">Sim</span> — R$ 300–800/mês por workflow</td>
-        </tr>
-        <tr>
-          <td class="td-cat" style="color:var(--cyan);">AI Agent</td>
-          <td>Entidade autônoma com objetivo, ferramentas, estado e métricas. Atende todos os 6 critérios.</td>
-          <td>Agente de cobrança, FP&amp;A, qualificação de leads</td>
-          <td><span class="badge badge-agent">Sim — full Build &amp; Transfer</span></td>
-          <td><span class="badge badge-agent">Sim — R$ 2–5k/mês por agente</span></td>
-        </tr>
+        <tr><td>AI Assistant</td><td>LLM + base de conhecimento. Sem ferramentas, sem autonomia, sem estado.</td><td>Claude Project jurídico</td><td><span class="badge bN">Não</span></td><td><span class="badge bY">Sim</span> — no Strategic Ops Fee</td></tr>
+        <tr><td>AI Workflow</td><td>Automação com LLM em pontos críticos. Sem autonomia complexa.</td><td>n8n com classificação LLM</td><td><span class="badge bM">Possível</span></td><td><span class="badge bY">Sim</span> — R$ 300–800/mês</td></tr>
+        <tr><td class="tdb" style="color:var(--cy)">AI Agent</td><td>Entidade autônoma com objetivo, ferramentas, estado e métricas. Atende os 6 critérios.</td><td>Agente de cobrança, FP&amp;A</td><td><span class="badge bA">Sim — Build &amp; Transfer</span></td><td><span class="badge bA">Sim — R$ 2–5k/mês</span></td></tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<!-- SECTION 4: TIERS -->
-<div class="section">
-  <div class="section-label">Os 3 Tiers de Agente — classificar no kickoff, define pricing</div>
-  <div class="tiers-grid">
-    <div class="tier-card tier-1">
+<div class="sec">
+  <div class="slabel">3 Tiers — classificar no kickoff, define pricing</div>
+  <div class="tgrid">
+    <div class="tier t1">
       <div class="tier-tag">Tier 1</div>
       <div class="tier-name">Lite</div>
-      <div class="tier-rows">
-        <div class="tier-row"><span class="tier-row-label">Ferramentas</span><span class="tier-row-val">1–3 ferramentas, decisões simples</span></div>
-        <div class="tier-row"><span class="tier-row-label">Volume</span><span class="tier-row-val">Menos de 500 execuções/mês</span></div>
-        <div class="tier-row"><span class="tier-row-label">Criticidade</span><span class="tier-row-val">Erro tem impacto baixo (informativo)</span></div>
-      </div>
+      <div class="tier-row"><span class="tier-rl">Ferramentas</span><span class="tier-rv">1–3, decisões simples</span></div>
+      <div class="tier-row"><span class="tier-rl">Volume</span><span class="tier-rv">&lt; 500 exec/mês</span></div>
+      <div class="tier-row"><span class="tier-rl">Criticidade</span><span class="tier-rv">Impacto baixo</span></div>
       <div class="tier-price">R$ 25–50k</div>
-      <div class="tier-example">Ex: Classificador de leads</div>
+      <div class="tier-ex">Ex: Classificador de leads</div>
     </div>
-    <div class="tier-card tier-2">
+    <div class="tier t2">
       <div class="tier-tag">Tier 2</div>
       <div class="tier-name">Standard</div>
-      <div class="tier-rows">
-        <div class="tier-row"><span class="tier-row-label">Ferramentas</span><span class="tier-row-val">4–7 ferramentas, decisões multi-step</span></div>
-        <div class="tier-row"><span class="tier-row-label">Volume</span><span class="tier-row-val">500–5.000 execuções/mês</span></div>
-        <div class="tier-row"><span class="tier-row-label">Criticidade</span><span class="tier-row-val">Erro com impacto operacional, ajustável</span></div>
-      </div>
+      <div class="tier-row"><span class="tier-rl">Ferramentas</span><span class="tier-rv">4–7, multi-step</span></div>
+      <div class="tier-row"><span class="tier-rl">Volume</span><span class="tier-rv">500–5k exec/mês</span></div>
+      <div class="tier-row"><span class="tier-rl">Criticidade</span><span class="tier-rv">Impacto operacional</span></div>
       <div class="tier-price">R$ 60–120k</div>
-      <div class="tier-example">Ex: Agente de cobrança N1, Onboarding B2B</div>
+      <div class="tier-ex">Ex: Cobrança N1, Onboarding B2B</div>
     </div>
-    <div class="tier-card tier-3">
+    <div class="tier t3">
       <div class="tier-tag">Tier 3</div>
       <div class="tier-name">Critical</div>
-      <div class="tier-rows">
-        <div class="tier-row"><span class="tier-row-label">Ferramentas</span><span class="tier-row-val">8+ ferramentas, aprovação multi-stakeholder</span></div>
-        <div class="tier-row"><span class="tier-row-label">Volume</span><span class="tier-row-val">5.000+ execuções/mês</span></div>
-        <div class="tier-row"><span class="tier-row-label">Criticidade</span><span class="tier-row-val">Erro financeiro, regulatório ou reputacional</span></div>
-      </div>
+      <div class="tier-row"><span class="tier-rl">Ferramentas</span><span class="tier-rv">8+, multi-stakeholder</span></div>
+      <div class="tier-row"><span class="tier-rl">Volume</span><span class="tier-rv">5k+ exec/mês</span></div>
+      <div class="tier-row"><span class="tier-rl">Criticidade</span><span class="tier-rv">Financeiro / regulatório</span></div>
       <div class="tier-price">R$ 150–300k</div>
-      <div class="tier-example">Ex: Reconciliação fiscal, FP&amp;A</div>
+      <div class="tier-ex">Ex: Reconciliação fiscal, FP&amp;A</div>
     </div>
   </div>
 </div>
 
-<!-- SECTION 5: O QUE NÃO É AGENTE -->
-<div class="section">
-  <div class="section-label">O que NÃO é Agente — deixar explícito no contrato</div>
-  <div class="not-agent-grid">
-    <div class="not-item">
-      <div class="not-icon">✕</div>
-      <div class="not-title">Prompt único</div>
-      <div class="not-why">Chamada de modelo. Sem estado, sem ferramentas, sem autonomia.</div>
-    </div>
-    <div class="not-item">
-      <div class="not-icon">✕</div>
-      <div class="not-title">RPA tradicional</div>
-      <div class="not-why">Sem decisão por LLM, sem aprendizado contextual.</div>
-    </div>
-    <div class="not-item">
-      <div class="not-icon">✕</div>
-      <div class="not-title">Chatbot de FAQ</div>
-      <div class="not-why">Sem decisões, sem ferramentas, sem alteração no mundo.</div>
-    </div>
-    <div class="not-item">
-      <div class="not-icon">✕</div>
-      <div class="not-title">Função Zapier/Make</div>
-      <div class="not-why">Integração leve. Classifica como AI Workflow, não Agente.</div>
-    </div>
-    <div class="not-item">
-      <div class="not-icon">✕</div>
-      <div class="not-title">Script agendado</div>
-      <div class="not-why">Automação simples de relatório. Sem agente, sem autonomia.</div>
-    </div>
+<div class="sec">
+  <div class="slabel">Não é agente — filtro comercial obrigatório</div>
+  <div class="nagrid">
+    <div class="nai"><div class="nai-t">Prompt único</div><div class="nai-d">Sem estado, sem ferramentas, sem autonomia.</div></div>
+    <div class="nai"><div class="nai-t">RPA tradicional</div><div class="nai-d">Sem decisão por LLM.</div></div>
+    <div class="nai"><div class="nai-t">Chatbot de FAQ</div><div class="nai-d">Sem alteração no mundo.</div></div>
+    <div class="nai"><div class="nai-t">Função Zapier/Make</div><div class="nai-d">AI Workflow, não Agente.</div></div>
+    <div class="nai"><div class="nai-t">Script agendado</div><div class="nai-d">Automação simples, sem autonomia.</div></div>
   </div>
 </div>
 
-<!-- SECTION 6: REGRA DE OURO -->
-<div class="section">
-  <div class="section-label">Regra de ouro para o comercial</div>
-  <div class="rule-box">
-    <div class="rule-label">Filtro antes de proposta</div>
-    <p class="rule-text">Quando um prospect descrever uma necessidade, <strong>classificar primeiro em AI Assistant, AI Workflow ou AI Agent</strong>. O Build &amp; Transfer só se aplica a Agentes que atendem aos 6 critérios. Workflows leves entram via OS Subscription (R$ 300–800/mês). Assistants entram via Strategic Operations Fee. <strong>Nunca cobrar Build &amp; Transfer por algo que não atende à definição.</strong></p>
+<div class="sec">
+  <div class="slabel">Regra de ouro para o comercial</div>
+  <div class="rulebox">
+    <div class="rule-lbl">Filtro antes de proposta</div>
+    <p>Classificar em <strong>AI Assistant, AI Workflow ou AI Agent</strong> antes de qualquer proposta. Build &amp; Transfer só para Agentes com os 6 critérios. Workflows entram via OS Subscription (R$ 300–800/mês). <strong>Nunca cobrar Build &amp; Transfer por algo que não atende à definição.</strong></p>
   </div>
 </div>
 
 <footer>
-  <div class="footer-left">Confidencial · Uso interno · Dalton Lab</div>
-  <div class="footer-right">Rodrigo Spinola · CEO &amp; Founder</div>
+  <span>Confidencial · Uso interno · Dalton Lab</span>
+  <span>Rodrigo Spinola · CEO &amp; Founder</span>
 </footer>
 
 </div>

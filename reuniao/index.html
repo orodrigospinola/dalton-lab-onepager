@@ -4,90 +4,75 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reunião de Sócios · Dalton Lab</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #050d1c;
-  --bg-2: #0a1628;
-  --bg-3: #0f1f3a;
-  --card: rgba(15,31,58,0.7);
-  --border: rgba(51,173,229,0.12);
-  --border-2: rgba(51,173,229,0.3);
-  --text: #f0f9ff;
-  --text-2: #b6c7df;
-  --text-3: #6b7c95;
-  --text-4: #4a5670;
-  --cyan: #33ADE5;
-  --cyan-glow: rgba(51,173,229,0.15);
-  --green: #10b981;
-  --yellow: #f59e0b;
-  --purple: #a78bfa;
-  --red: #ef4444;
-  --grad-cyan: linear-gradient(135deg, #33ADE5 0%, #5BC0F0 100%);
+:root{
+  --bg:#050d1c;--card:rgba(15,31,58,0.75);
+  --b1:rgba(51,173,229,0.12);--b2:rgba(51,173,229,0.32);
+  --t0:#f0f9ff;--t1:#b6c7df;--t2:#6b7c95;--t3:#3a4d65;
+  --cy:#33ADE5;--cy2:rgba(51,173,229,0.14);
+  --gr:#10b981;--gr2:rgba(16,185,129,0.13);
+  --ye:#f59e0b;--re:#ef4444;--pu:#a78bfa;
+  --gcyan:linear-gradient(135deg,#33ADE5,#5BC0F0);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;display:flex;align-items:center;justify-content:center;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t0);min-height:100vh;-webkit-font-smoothing:antialiased;display:flex;align-items:center;justify-content:center;}
 a{text-decoration:none;color:inherit;}
 
-.page{width:100%;max-width:900px;padding:52px 40px;}
+.page{width:100%;max-width:860px;padding:48px 36px;}
 
-/* HEADER */
-.header{text-align:center;margin-bottom:52px;}
-.logo-wrap{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:20px;}
-.logo-img-hero{height:56px;width:auto;}
-.logo-name{font-size:28px;font-weight:800;color:var(--text);letter-spacing:-0.5px;}
-.logo-name span{background:var(--grad-cyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.header-tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--cyan);border:1px solid var(--border-2);padding:5px 16px;border-radius:50px;background:var(--cyan-glow);margin-bottom:14px;}
-.header-title{font-size:42px;font-weight:800;color:var(--text);letter-spacing:-1px;line-height:1.1;margin-bottom:10px;}
-.header-title span{background:var(--grad-cyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.header-meta{font-size:13px;color:var(--text-3);}
-.header-meta strong{color:var(--text-2);}
+.header{text-align:center;margin-bottom:44px;}
+.logo-wrap{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:18px;}
+.logo{width:52px;height:52px;border-radius:12px;}
+.logo-name{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--t0);letter-spacing:-0.3px;}
+.logo-name span{background:var(--gcyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.htag{display:inline-block;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.22em;color:var(--cy);border:1px solid var(--b2);padding:4px 13px;border-radius:40px;background:var(--cy2);margin-bottom:12px;}
+.htitle{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;letter-spacing:-0.8px;line-height:1.1;margin-bottom:9px;}
+.htitle span{background:var(--gcyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hmeta{font-size:12px;color:var(--t2);}
+.hmeta strong{color:var(--t1);}
 
-/* DIVIDER */
-.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(51,173,229,0.3),transparent);margin:0 0 40px;}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(51,173,229,0.3),transparent);margin:0 0 36px;}
 
-/* CARDS */
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px 26px;position:relative;overflow:hidden;transition:border-color 0.2s,transform 0.2s;}
-.card:hover{border-color:var(--border-2);transform:translateY(-2px);}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
-.card-1::before{background:var(--grad-cyan);}
-.card-2::before{background:linear-gradient(135deg,var(--purple),var(--cyan));}
-.card-3::before{background:linear-gradient(135deg,var(--yellow),var(--cyan));}
-.card-4::before{background:linear-gradient(135deg,var(--green),var(--cyan));}
-.card-num{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;margin-bottom:8px;}
-.card-1 .card-num{color:var(--cyan);}
-.card-2 .card-num{color:var(--purple);}
-.card-3 .card-num{color:var(--yellow);}
-.card-4 .card-num{color:var(--green);}
-.card-title{font-size:20px;font-weight:800;color:var(--text);letter-spacing:-0.3px;margin-bottom:8px;line-height:1.2;}
-.card-sub{font-size:12px;color:var(--text-3);line-height:1.5;margin-bottom:16px;}
-.card-topics{list-style:none;margin-bottom:18px;}
-.card-topics li{font-size:11px;color:var(--text-2);padding:4px 0 4px 14px;position:relative;border-bottom:1px solid var(--border);line-height:1.4;}
-.card-topics li:last-child{border-bottom:none;}
-.card-topics li::before{content:'›';position:absolute;left:0;font-weight:700;}
-.card-1 .card-topics li::before{color:var(--cyan);}
-.card-2 .card-topics li::before{color:var(--purple);}
-.card-3 .card-topics li::before{color:var(--yellow);}
-.card-4 .card-topics li::before{color:var(--green);}
-.card-cta{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:8px 18px;border-radius:50px;transition:all 0.2s;}
-.card-1 .card-cta{background:var(--cyan-glow);color:var(--cyan);border:1px solid var(--border-2);}
-.card-2 .card-cta{background:rgba(167,139,250,0.1);color:var(--purple);border:1px solid rgba(167,139,250,0.3);}
-.card-3 .card-cta{background:rgba(245,158,11,0.1);color:var(--yellow);border:1px solid rgba(245,158,11,0.3);}
-.card-4 .card-cta{background:rgba(16,185,129,0.1);color:var(--green);border:1px solid rgba(16,185,129,0.3);}
-.card-cta:hover{opacity:0.8;}
-.card-cta::after{content:'→';}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px;}
+.card{background:var(--card);border:1px solid var(--b1);border-radius:12px;padding:22px 24px;position:relative;overflow:hidden;transition:border-color 0.18s,transform 0.18s;}
+.card:hover{border-color:var(--b2);transform:translateY(-2px);}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.c1::before{background:var(--gcyan);}
+.c2::before{background:linear-gradient(135deg,var(--pu),var(--cy));}
+.c3::before{background:linear-gradient(135deg,var(--ye),var(--cy));}
+.c4::before{background:linear-gradient(135deg,var(--gr),var(--cy));}
+.cnum{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:6px;}
+.c1 .cnum{color:var(--cy);}
+.c2 .cnum{color:var(--pu);}
+.c3 .cnum{color:var(--ye);}
+.c4 .cnum{color:var(--gr);}
+.ctitle{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--t0);letter-spacing:-0.2px;margin-bottom:6px;line-height:1.2;}
+.csub{font-size:11.5px;color:var(--t2);line-height:1.5;margin-bottom:14px;}
+.ctopics{list-style:none;margin-bottom:16px;}
+.ctopics li{font-size:11px;color:var(--t1);padding:3px 0 3px 12px;position:relative;border-bottom:1px solid var(--b1);line-height:1.4;}
+.ctopics li:last-child{border-bottom:none;}
+.ctopics li::before{content:'›';position:absolute;left:0;font-weight:700;}
+.c1 .ctopics li::before{color:var(--cy);}
+.c2 .ctopics li::before{color:var(--pu);}
+.c3 .ctopics li::before{color:var(--ye);}
+.c4 .ctopics li::before{color:var(--gr);}
+.ccta{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:7px 15px;border-radius:40px;transition:opacity 0.18s;}
+.c1 .ccta{background:var(--cy2);color:var(--cy);border:1px solid var(--b2);}
+.c2 .ccta{background:rgba(167,139,250,0.1);color:var(--pu);border:1px solid rgba(167,139,250,0.3);}
+.c3 .ccta{background:rgba(245,158,11,0.1);color:var(--ye);border:1px solid rgba(245,158,11,0.28);}
+.c4 .ccta{background:var(--gr2);color:var(--gr);border:1px solid rgba(16,185,129,0.28);}
+.ccta:hover{opacity:0.75;}
+.ccta::after{content:'→';}
 
-/* CONTEXT LINK */
-.context-link{text-align:center;margin-bottom:32px;}
-.context-btn{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--text-3);border:1px solid var(--border);padding:8px 20px;border-radius:50px;transition:all 0.2s;}
-.context-btn:hover{border-color:var(--border-2);color:var(--cyan);}
-.context-btn::before{content:'◆';font-size:7px;color:var(--cyan);}
+.ctxlink{text-align:center;margin-bottom:28px;}
+.ctxbtn{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:var(--t2);border:1px solid var(--b1);padding:7px 18px;border-radius:40px;transition:all 0.18s;}
+.ctxbtn:hover{border-color:var(--b2);color:var(--cy);}
+.ctxbtn::before{content:'◆';font-size:6px;color:var(--cy);}
 
-/* FOOTER */
 footer{text-align:center;}
-.footer-rule{height:1px;background:linear-gradient(90deg,transparent,rgba(51,173,229,0.2),transparent);margin-bottom:16px;}
-.footer-text{font-size:10px;color:var(--text-4);letter-spacing:0.05em;}
+.frule{height:1px;background:linear-gradient(90deg,transparent,rgba(51,173,229,0.2),transparent);margin-bottom:13px;}
+.ftext{font-size:10px;color:var(--t3);letter-spacing:0.04em;}
 </style>
 </head>
 <body>
@@ -95,81 +80,74 @@ footer{text-align:center;}
 
   <div class="header">
     <div class="logo-wrap">
-      <img src="logo-horizontal.svg" class="logo-img-hero" alt="Dalton Lab">
+      <img src="data:image/png;base64,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" class="logo" alt="Dalton Lab">
+      <div class="logo-name">Dalton <span>Lab</span></div>
     </div>
-    <div class="header-tag">Reunião de Sócios · 10 de Maio de 2026</div>
-    <h1 class="header-title">One-Pagers de<br><span>Alinhamento Estratégico</span></h1>
-    <p class="header-meta"><strong>Rodrigo Spinola</strong> (CEO) + <strong>Marcelo Ramos</strong> (COO) · Confidencial · Uso interno</p>
+    <div class="htag">Reunião de Sócios · 10 de Maio de 2026</div>
+    <h1 class="htitle">One-Pagers de<br><span>Alinhamento Estratégico</span></h1>
+    <p class="hmeta"><strong>Rodrigo Spinola</strong> (CEO) + <strong>Marcelo Ramos</strong> (COO) · Confidencial</p>
   </div>
 
   <div class="divider"></div>
 
   <div class="cards">
-
-    <a href="ONEPAGER_01_DEFINICAO_AGENTE.html" class="card card-1">
-      <div class="card-num">1 de 4 · Definição</div>
-      <div class="card-title">O que é um Agente na Dalton Lab</div>
-      <div class="card-sub">Definição operacional rigorosa. Sem essa clareza, o comercial e o produto desmontam.</div>
-      <ul class="card-topics">
+    <a href="ONEPAGER_01_DEFINICAO_AGENTE.html" class="card c1">
+      <div class="cnum">1 de 4 · Definição</div>
+      <div class="ctitle">O que é um Agente</div>
+      <div class="csub">Definição com 6 critérios, 3 categorias e 3 tiers. A base de tudo.</div>
+      <ul class="ctopics">
         <li>Definição canônica com 6 critérios obrigatórios</li>
-        <li>AI Agent vs AI Workflow vs AI Assistant</li>
-        <li>3 Tiers (Lite, Standard, Critical) com critérios e pricing</li>
+        <li>Agent vs Workflow vs Assistant — diferença clara</li>
+        <li>3 Tiers (Lite, Standard, Critical) com pricing</li>
         <li>O que NÃO é agente — filtro comercial</li>
-        <li>Regra de ouro para o comercial</li>
       </ul>
-      <span class="card-cta">Abrir one-pager</span>
+      <span class="ccta">Abrir</span>
     </a>
-
-    <a href="ONEPAGER_02_NOVA_OFERTA.html" class="card card-2">
-      <div class="card-num">2 de 4 · Oferta</div>
-      <div class="card-title">A Nova Oferta Dalton Lab</div>
-      <div class="card-sub">Dois produtos núcleo. Quatro camadas de pricing. Dois modos de entrega.</div>
-      <ul class="card-topics">
+    <a href="ONEPAGER_02_NOVA_OFERTA.html" class="card c2">
+      <div class="cnum">2 de 4 · Oferta</div>
+      <div class="ctitle">A Nova Oferta</div>
+      <div class="csub">Dois produtos. Quatro camadas. Dois modos de entrega.</div>
+      <ul class="ctopics">
         <li>Dalton Lab OS + Dalton Compass</li>
         <li>4 camadas de pricing com tabela completa</li>
-        <li>BOT vs Managed Operation — quando aplicar cada</li>
-        <li>Pioneer Pricing: mecânica e Case Study Clause</li>
-        <li>Aplicação nos 4 prospects ativos</li>
+        <li>BOT vs Managed Operation</li>
+        <li>Pioneer Pricing + 4 prospects ativos</li>
       </ul>
-      <span class="card-cta">Abrir one-pager</span>
+      <span class="ccta">Abrir</span>
     </a>
-
-    <a href="ONEPAGER_03_PASSOS_ESTRATEGICOS.html" class="card card-3">
-      <div class="card-num">3 de 4 · Estratégia</div>
-      <div class="card-title">Os Próximos 90 Dias</div>
-      <div class="card-sub">5 prioridades estratégicas, 5 owners, e o que conscientemente não faremos.</div>
-      <ul class="card-topics">
-        <li>OS em 90 dias · Neogrid Pioneer · Programa de Partners</li>
+    <a href="ONEPAGER_03_PASSOS_ESTRATEGICOS.html" class="card c3">
+      <div class="cnum">3 de 4 · Estratégia</div>
+      <div class="ctitle">Os Próximos 90 Dias</div>
+      <div class="csub">5 prioridades, 5 owners, o que não faremos e a visão de 12 meses.</div>
+      <ul class="ctopics">
+        <li>OS · Neogrid Pioneer · Programa de Partners</li>
         <li>Web Summit Rio + conteúdo de categoria</li>
-        <li>Reformulação MakeOne, Rumo, Access Stage</li>
-        <li>O que NÃO faremos (5 itens claros)</li>
-        <li>Visão de 12 meses: ARR R$8–15M, NRR 110–130%</li>
+        <li>5 itens que conscientemente não faremos</li>
+        <li>ARR R–15M · NRR 110–130%</li>
       </ul>
-      <span class="card-cta">Abrir one-pager</span>
+      <span class="ccta">Abrir</span>
     </a>
-
-    <a href="ONEPAGER_04_PRIORIDADES_SEMANA.html" class="card card-4">
-      <div class="card-num">4 de 4 · Execução</div>
-      <div class="card-title">A Semana que Vem</div>
-      <div class="card-sub">8 decisões concretas, 5 dias, 2 owners principais. Foco em desbloqueio.</div>
-      <ul class="card-topics">
-        <li>Calendário de ações por dia (Seg–Sex)</li>
-        <li>8 decisões com checkbox e owner explícito</li>
-        <li>KPIs da semana: o que queremos ver até sexta</li>
+    <a href="ONEPAGER_04_PRIORIDADES_SEMANA.html" class="card c4">
+      <div class="cnum">4 de 4 · Execução</div>
+      <div class="ctitle">A Semana que Vem</div>
+      <div class="csub">8 decisões. Calendário Seg–Sex. KPIs. 4 riscos.</div>
+      <ul class="ctopics">
+        <li>Calendário de ações por dia</li>
+        <li>8 decisões com checkbox e owner</li>
+        <li>KPIs: o que queremos ver até sexta</li>
         <li>4 riscos principais a monitorar</li>
       </ul>
-      <span class="card-cta">Abrir one-pager</span>
+      <span class="ccta">Abrir</span>
     </a>
-
   </div>
 
-  <div class="context-link">
-    <a href="../index.html" class="context-btn">Ver contexto estratégico completo Dalton Lab v2.0</a>
+  <div class="ctxlink">
+    <a href="../index.html" class="ctxbtn">Ver contexto estratégico completo Dalton Lab v2.0</a>
   </div>
 
   <footer>
-    <div class="footer-rule"></div>
-    <div class="footer-text">Confidencial · Uso exclusivo de Rodrigo Spinola e Marcelo Ramos · Dalton Lab · 10 de Maio de 2026</div>
+    <div class="frule"></div>
+    <div class="ftext">Confidencial · Uso exclusivo de Rodrigo Spinola e Marcelo Ramos · Dalton Lab · 10 de Maio de 2026</div>
   </footer>
 
 </div>

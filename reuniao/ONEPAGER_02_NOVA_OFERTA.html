@@ -3,370 +3,271 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nova Oferta · Dalton Lab</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>2 · Nova Oferta — Dalton Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #050d1c;
-  --bg-2: #0a1628;
-  --bg-3: #0f1f3a;
-  --card: rgba(15,31,58,0.7);
-  --card-h: rgba(20,41,72,0.9);
-  --border: rgba(51,173,229,0.12);
-  --border-2: rgba(51,173,229,0.3);
-  --text: #f0f9ff;
-  --text-2: #b6c7df;
-  --text-3: #6b7c95;
-  --text-4: #4a5670;
-  --cyan: #33ADE5;
-  --cyan-2: #5BC0F0;
-  --cyan-glow: rgba(51,173,229,0.15);
-  --green: #10b981;
-  --green-glow: rgba(16,185,129,0.15);
-  --yellow: #f59e0b;
-  --yellow-glow: rgba(245,158,11,0.15);
-  --red: #ef4444;
-  --purple: #a78bfa;
-  --grad-cyan: linear-gradient(135deg, #33ADE5 0%, #5BC0F0 100%);
+:root{
+  --bg:#050d1c;--s1:#0a1628;--s2:#0f1f3a;
+  --card:rgba(15,31,58,0.75);
+  --b1:rgba(51,173,229,0.12);--b2:rgba(51,173,229,0.32);
+  --t0:#f0f9ff;--t1:#b6c7df;--t2:#6b7c95;--t3:#3a4d65;
+  --cy:#33ADE5;--cy2:rgba(51,173,229,0.14);
+  --gr:#10b981;--gr2:rgba(16,185,129,0.13);
+  --ye:#f59e0b;--ye2:rgba(245,158,11,0.13);
+  --re:#ef4444;--re2:rgba(239,68,68,0.08);
+  --pu:#a78bfa;
+  --gcyan:linear-gradient(135deg,#33ADE5,#5BC0F0);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+html{font-size:13px;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t0);min-height:100vh;-webkit-font-smoothing:antialiased;}
+.page{max-width:1080px;margin:0 auto;padding:28px 36px 36px;}
 
-.page{max-width:1100px;margin:0 auto;padding:32px 40px 40px;}
+header{display:flex;align-items:center;justify-content:space-between;padding-bottom:16px;margin-bottom:22px;border-bottom:1px solid var(--b1);}
+.hl{display:flex;align-items:center;gap:12px;}
+.logo{width:40px;height:40px;flex-shrink:0;border-radius:10px;}
+.htitle{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--t1);}
+.hsub{font-size:11px;color:var(--t2);margin-top:1px;}
+.hdate{font-size:11px;color:var(--t2);text-align:right;}
+.hnum{font-size:11px;font-weight:600;color:var(--cy);text-align:right;margin-top:2px;letter-spacing:0.06em;}
 
-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--border);}
-.header-left{display:flex;align-items:center;gap:14px;}
-.logo-img{width:44px;height:44px;flex-shrink:0;}
-.header-title{font-size:13px;font-weight:700;color:var(--text-2);}
-.header-subtitle{font-size:11px;color:var(--text-3);margin-top:2px;}
-.header-date{font-size:11px;color:var(--text-3);text-align:right;}
-.header-num{font-size:11px;font-weight:700;color:var(--cyan);margin-top:2px;letter-spacing:0.05em;text-align:right;}
+.hero{margin-bottom:20px;}
+.tag{display:inline-block;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.22em;color:var(--cy);border:1px solid var(--b2);padding:4px 12px;border-radius:40px;background:var(--cy2);margin-bottom:10px;}
+h1{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;letter-spacing:-0.5px;line-height:1.1;margin-bottom:7px;}
+h1 span{background:var(--gcyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero p{font-size:13px;color:var(--t1);line-height:1.55;}
 
-.hero{margin-bottom:22px;}
-.hero-tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--cyan);border:1px solid var(--border-2);padding:5px 14px;border-radius:50px;background:var(--cyan-glow);margin-bottom:12px;}
-.hero-title{font-size:36px;font-weight:800;color:var(--text);letter-spacing:-0.5px;line-height:1.1;margin-bottom:8px;}
-.hero-title span{background:var(--grad-cyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hero-sub{font-size:14px;color:var(--text-2);line-height:1.5;}
+.sec{margin-bottom:18px;}
+.slabel{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.22em;color:var(--cy);margin-bottom:9px;display:flex;align-items:center;gap:8px;}
+.slabel::after{content:'';flex:1;height:1px;background:var(--b1);}
 
-.section{margin-bottom:20px;}
-.section-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--cyan);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
-.section-label::after{content:'';flex:1;height:1px;background:var(--border);}
-
-/* PRODUTOS */
-.products-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.product-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px 18px;position:relative;overflow:hidden;}
-.product-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-cyan);}
-.product-tag{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--cyan);margin-bottom:6px;}
-.product-name{font-size:17px;font-weight:800;color:var(--text);margin-bottom:6px;}
-.product-desc{font-size:11px;color:var(--text-3);margin-bottom:10px;line-height:1.5;}
-.product-bullets{list-style:none;margin-bottom:10px;}
-.product-bullets li{font-size:11px;color:var(--text-2);padding:3px 0 3px 14px;position:relative;line-height:1.4;}
-.product-bullets li::before{content:'›';position:absolute;left:0;color:var(--cyan);font-weight:700;}
-.product-status{font-size:10px;font-weight:600;color:var(--green);background:var(--green-glow);border:1px solid rgba(16,185,129,0.25);padding:4px 10px;border-radius:50px;display:inline-block;}
+/* PRODUCTS */
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.pcard{background:var(--card);border:1px solid var(--b1);border-radius:8px;padding:14px 16px;position:relative;overflow:hidden;}
+.pcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gcyan);}
+.ptag{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.18em;color:var(--cy);margin-bottom:4px;}
+.pname{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--t0);margin-bottom:5px;}
+.pdesc{font-size:11.5px;color:var(--t2);margin-bottom:8px;line-height:1.5;}
+.pbullets{list-style:none;margin-bottom:8px;}
+.pbullets li{font-size:11px;color:var(--t1);padding:2px 0 2px 12px;position:relative;line-height:1.4;}
+.pbullets li::before{content:'›';position:absolute;left:0;color:var(--cy);font-weight:700;}
+.pstatus{font-size:10px;font-weight:600;color:var(--gr);background:var(--gr2);border:1px solid rgba(16,185,129,0.24);padding:3px 9px;border-radius:40px;display:inline-block;}
 
 /* TABLE */
-.table-wrap{overflow-x:auto;}
-table{width:100%;border-collapse:collapse;font-size:12px;}
+.tw{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:11.5px;}
 thead tr{background:rgba(51,173,229,0.06);}
-th{padding:9px 12px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--cyan);border-bottom:1px solid var(--border-2);}
-td{padding:9px 12px;color:var(--text-2);border-bottom:1px solid var(--border);vertical-align:middle;line-height:1.4;}
+th{padding:8px 11px;text-align:left;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.16em;color:var(--cy);border-bottom:1px solid var(--b2);}
+td{padding:8px 11px;color:var(--t1);border-bottom:1px solid var(--b1);vertical-align:middle;line-height:1.4;}
 tr:last-child td{border-bottom:none;}
-.td-bold{font-weight:700;color:var(--text);}
-.td-price{font-weight:700;color:var(--cyan);}
-.td-opt{font-size:10px;color:var(--text-3);}
-.badge{display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:2px 8px;border-radius:50px;}
-.badge-green{background:var(--green-glow);color:var(--green);border:1px solid rgba(16,185,129,0.3);}
-.badge-yellow{background:var(--yellow-glow);color:var(--yellow);border:1px solid rgba(245,158,11,0.3);}
-.badge-cyan{background:var(--cyan-glow);color:var(--cyan);border:1px solid var(--border-2);}
-.badge-purple{background:rgba(167,139,250,0.1);color:var(--purple);border:1px solid rgba(167,139,250,0.3);}
-.badge-red{background:rgba(239,68,68,0.08);color:var(--red);border:1px solid rgba(239,68,68,0.2);}
+.tdb{font-weight:600;color:var(--t0);}
+.tdp{font-weight:700;color:var(--cy);}
+.badge{display:inline-block;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;padding:2px 7px;border-radius:40px;}
+.bY{background:var(--gr2);color:var(--gr);border:1px solid rgba(16,185,129,0.28);}
+.bM{background:var(--ye2);color:var(--ye);border:1px solid rgba(245,158,11,0.28);}
+.bC{background:var(--cy2);color:var(--cy);border:1px solid var(--b2);}
+.bP{background:rgba(167,139,250,0.1);color:var(--pu);border:1px solid rgba(167,139,250,0.3);}
 
 /* MODES */
-.modes-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.mode-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 16px;}
-.mode-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
-.mode-name{font-size:14px;font-weight:800;color:var(--text);}
-.mode-default{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;background:var(--cyan);color:var(--bg);padding:2px 8px;border-radius:50px;}
-.mode-alt{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;background:rgba(167,139,250,0.15);color:var(--purple);border:1px solid rgba(167,139,250,0.3);padding:2px 8px;border-radius:50px;}
-.mode-items{list-style:none;}
-.mode-items li{font-size:11px;color:var(--text-2);padding:3px 0 3px 14px;position:relative;line-height:1.4;}
-.mode-items li::before{content:'—';position:absolute;left:0;color:var(--cyan);font-size:10px;}
-.mode-icp{margin-top:8px;padding-top:8px;border-top:1px solid var(--border);font-size:10px;color:var(--text-3);}
-.mode-icp strong{color:var(--cyan);}
-.mode-premium{margin-top:6px;font-size:11px;font-weight:700;color:var(--purple);}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.mcard{background:var(--card);border:1px solid var(--b1);border-radius:8px;padding:12px 14px;}
+.mhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.mname{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--t0);}
+.mbadge-def{font-size:9px;font-weight:700;text-transform:uppercase;background:var(--cy);color:var(--bg);padding:2px 7px;border-radius:40px;}
+.mbadge-alt{font-size:9px;font-weight:700;text-transform:uppercase;background:rgba(167,139,250,0.15);color:var(--pu);border:1px solid rgba(167,139,250,0.3);padding:2px 7px;border-radius:40px;}
+.mitems{list-style:none;}
+.mitems li{font-size:11px;color:var(--t1);padding:2px 0 2px 12px;position:relative;line-height:1.4;}
+.mitems li::before{content:'—';position:absolute;left:0;color:var(--cy);font-size:10px;}
+.micp{margin-top:7px;padding-top:7px;border-top:1px solid var(--b1);font-size:10px;color:var(--t2);}
+.micp strong{color:var(--cy);}
+.mprem{margin-top:5px;font-size:11px;font-weight:600;color:var(--pu);}
 
 /* PIONEER */
-.pioneer-box{background:linear-gradient(135deg,rgba(245,158,11,0.07),rgba(245,158,11,0.02));border:1px solid rgba(245,158,11,0.25);border-left:4px solid var(--yellow);padding:14px 18px;border-radius:0 8px 8px 0;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.pioneer-col-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--yellow);margin-bottom:8px;}
-.pioneer-items{list-style:none;}
-.pioneer-items li{font-size:11px;color:var(--text-2);padding:3px 0;padding-left:14px;position:relative;line-height:1.4;}
-.pioneer-items li::before{content:'◆';position:absolute;left:0;font-size:6px;top:6px;color:var(--yellow);}
-
-/* PROSPECTS */
-/* table already styled */
+.pioneer{background:linear-gradient(135deg,rgba(245,158,11,0.07),rgba(245,158,11,0.02));border:1px solid rgba(245,158,11,0.24);border-left:3px solid var(--ye);padding:12px 16px;border-radius:0 8px 8px 0;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.pio-lbl{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.16em;color:var(--ye);margin-bottom:6px;}
+.pio-items{list-style:none;}
+.pio-items li{font-size:11px;color:var(--t1);padding:2px 0 2px 12px;position:relative;line-height:1.4;}
+.pio-items li::before{content:'◆';position:absolute;left:0;font-size:6px;top:5px;color:var(--ye);}
 
 /* COMPARISON */
-.comparison-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
-.comp-col{padding:14px 16px;}
-.comp-old{background:rgba(239,68,68,0.04);border-right:1px solid var(--border);}
-.comp-new{background:rgba(51,173,229,0.04);}
-.comp-header{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:10px;}
-.comp-old .comp-header{color:var(--text-3);}
-.comp-new .comp-header{color:var(--cyan);}
+.compgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--b1);border-radius:8px;overflow:hidden;}
+.cold{padding:12px 14px;background:rgba(239,68,68,0.03);border-right:1px solid var(--b1);}
+.cnew{padding:12px 14px;background:rgba(51,173,229,0.03);}
+.comp-h{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.16em;margin-bottom:8px;}
+.cold .comp-h{color:var(--t2);}
+.cnew .comp-h{color:var(--cy);}
 .comp-items{list-style:none;}
-.comp-items li{font-size:11px;padding:4px 0 4px 14px;position:relative;line-height:1.4;border-bottom:1px solid var(--border);}
+.comp-items li{font-size:11px;padding:3px 0 3px 13px;position:relative;line-height:1.4;border-bottom:1px solid var(--b1);}
 .comp-items li:last-child{border-bottom:none;}
-.comp-old .comp-items li{color:var(--text-3);}
-.comp-old .comp-items li::before{content:'✕';position:absolute;left:0;color:var(--red);font-size:9px;top:5px;}
-.comp-new .comp-items li{color:var(--text-2);}
-.comp-new .comp-items li::before{content:'✓';position:absolute;left:0;color:var(--green);font-size:9px;top:5px;}
+.cold .comp-items li{color:var(--t2);}
+.cold .comp-items li::before{content:'✕';position:absolute;left:0;color:var(--re);font-size:9px;top:4px;}
+.cnew .comp-items li{color:var(--t1);}
+.cnew .comp-items li::before{content:'✓';position:absolute;left:0;color:var(--gr);font-size:9px;top:4px;}
 
-footer{margin-top:20px;padding-top:14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
-.footer-left,.footer-right{font-size:10px;color:var(--text-4);}
-
-@media print{
-  body{background:#050d1c;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-  .page{padding:20px 28px;}
-}
+footer{margin-top:20px;padding-top:12px;border-top:1px solid var(--b1);display:flex;justify-content:space-between;}
+footer span{font-size:10px;color:var(--t3);}
+@media print{body{background:#050d1c;-webkit-print-color-adjust:exact;print-color-adjust:exact;}.page{padding:18px 26px;}}
 </style>
 </head>
 <body>
 <div class="page">
 
 <header>
-  <div class="header-left">
-    <img src="logo-d-white.svg" class="logo-img" alt="Dalton Lab">
+  <div class="hl">
+    <img src="data:image/png;base64,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" class="logo" alt="Dalton Lab">
     <div>
-      <div class="header-title">Dalton Lab · Reunião de Sócios</div>
-      <div class="header-subtitle">Rodrigo Spinola · Marcelo Ramos</div>
+      <div class="htitle">Dalton Lab · Reunião de Sócios</div>
+      <div class="hsub">Rodrigo Spinola · Marcelo Ramos · Confidencial</div>
     </div>
   </div>
   <div>
-    <div class="header-date">10 de maio de 2026</div>
-    <div class="header-num">2 DE 4</div>
+    <div class="hdate">10 de maio de 2026</div>
+    <div class="hnum">2 DE 4</div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-tag">ONE-PAGER 2 DE 4 · OFERTA</div>
-  <h1 class="hero-title">A Nova <span>Oferta</span> Dalton Lab</h1>
-  <p class="hero-sub">Dois produtos núcleo. Quatro camadas de pricing. Dois modos de entrega. Um modelo: <strong style="color:var(--cyan)">Service as a Software.</strong></p>
-</section>
+<div class="hero">
+  <div class="tag">Oferta</div>
+  <h1>A Nova <span>Oferta</span> Dalton Lab</h1>
+  <p>Dois produtos núcleo. Quatro camadas de pricing. Dois modos de entrega. Modelo: <strong style="color:var(--cy)">Service as a Software.</strong></p>
+</div>
 
-<!-- SECTION 1: PRODUTOS -->
-<div class="section">
-  <div class="section-label">Os dois produtos núcleo proprietários</div>
-  <div class="products-grid">
-    <div class="product-card">
-      <div class="product-tag">Produto 1 · Plataforma</div>
-      <div class="product-name">Dalton Lab OS</div>
-      <div class="product-desc">Sistema operacional multi-vendor para gestão, governança e telemetria de agentes, workflows e assistants de IA dentro da empresa.</div>
-      <ul class="product-bullets">
-        <li>Governança, permissões e guardrails centralizados</li>
-        <li>Telemetria e observabilidade de cada entidade</li>
-        <li>Multi-vendor: Anthropic, OpenAI, OSS, terceiros</li>
-        <li>Logs auditáveis + command center com alertas</li>
+<div class="sec">
+  <div class="slabel">Dois produtos proprietários</div>
+  <div class="pgrid">
+    <div class="pcard">
+      <div class="ptag">Produto 1 · Plataforma</div>
+      <div class="pname">Dalton Lab OS</div>
+      <div class="pdesc">Sistema operacional multi-vendor para gestão, governança e telemetria de agentes, workflows e assistants de IA.</div>
+      <ul class="pbullets">
+        <li>Governança e permissões centralizadas</li>
+        <li>Telemetria por entidade + logs auditáveis</li>
+        <li>Multi-vendor: Anthropic, OpenAI, OSS</li>
       </ul>
-      <span class="product-status">MVP em 90 dias · Owner: Diego</span>
+      <span class="pstatus">MVP em 90 dias · Owner: Diego</span>
     </div>
-    <div class="product-card">
-      <div class="product-tag">Produto 2 · Estratégia</div>
-      <div class="product-name">Dalton Compass</div>
-      <div class="product-desc">Agente estratégico embarcado no cliente. Identifica oportunidades agênticas, propõe novos agentes e monitora performance contra benchmarks da base Dalton Lab.</div>
-      <ul class="product-bullets">
-        <li>Continuous Diagnosis: mapa agêntico em tempo real</li>
-        <li>Propostas de novos agentes com business case</li>
-        <li>Benchmarks contra base multi-cliente</li>
-        <li>Prepara Quarterly Expansion Review autonomamente</li>
+    <div class="pcard">
+      <div class="ptag">Produto 2 · Estratégia</div>
+      <div class="pname">Dalton Compass</div>
+      <div class="pdesc">Agente estratégico embarcado. Identifica oportunidades agênticas e monitora performance contra benchmarks.</div>
+      <ul class="pbullets">
+        <li>Mapa agêntico contínuo do cliente</li>
+        <li>Propõe novos agentes com business case</li>
+        <li>Prepara Quarterly Expansion Review</li>
       </ul>
-      <span class="product-status">v0 rule-based · evolui para data-driven em 6–12m</span>
+      <span class="pstatus">v0 rule-based → data-driven em 6–12m</span>
     </div>
   </div>
 </div>
 
-<!-- SECTION 2: PRICING -->
-<div class="section">
-  <div class="section-label">As 4 camadas de pricing (seção 8.1 do CONTEXT_v2)</div>
-  <div class="table-wrap">
+<div class="sec">
+  <div class="slabel">4 camadas de pricing</div>
+  <div class="tw">
     <table>
-      <thead>
-        <tr>
-          <th>Camada</th>
-          <th>Tipo</th>
-          <th>Pricing</th>
-          <th>Observação</th>
-        </tr>
-      </thead>
+      <thead><tr><th>Camada</th><th>Tipo</th><th>Pricing</th><th>Observação</th></tr></thead>
       <tbody>
-        <tr>
-          <td class="td-bold">1 · Build &amp; Transfer Fee</td>
-          <td>One-time por agente entregue</td>
-          <td class="td-price">R$ 25k – 300k <span style="font-size:10px;color:var(--text-3)">(3 tiers)</span></td>
-          <td>50% kickoff + 50% no transfer (D60 ou D90)</td>
-        </tr>
-        <tr>
-          <td class="td-bold">2 · OS Subscription Fee</td>
-          <td>Recorrente, multi-nível</td>
-          <td class="td-price">R$ 300–800/mês <span style="font-size:10px;color:var(--text-3)">(workflow)</span><br>R$ 2–5k/mês <span style="font-size:10px;color:var(--text-3)">(agente)</span></td>
-          <td>Degrau decrescente por volume de agentes</td>
-        </tr>
-        <tr>
-          <td class="td-bold">3 · Strategic Operations Fee</td>
-          <td>Recorrente fixo por sub-tier</td>
-          <td class="td-price">R$ 10–150k/mês</td>
-          <td>Compass + Strategic Touch (founders na sala). Capital aberto: mínimo R$ 40k</td>
-        </tr>
-        <tr>
-          <td class="td-bold">4 · Performance Fee</td>
-          <td class="td-opt">Variável opcional por área</td>
-          <td class="td-price">10–25% saving auditado</td>
-          <td>Cap 2–3× OS Subscription anual da área. Ativado caso a caso.</td>
-        </tr>
+        <tr><td class="tdb">1 · Build &amp; Transfer</td><td>One-time por agente</td><td class="tdp">R$ 25k–300k</td><td>50% kickoff + 50% no transfer (D60 ou D90)</td></tr>
+        <tr><td class="tdb">2 · OS Subscription</td><td>Recorrente</td><td class="tdp">R$ 300–800/mês (workflow)<br>R$ 2–5k/mês (agente)</td><td>Degrau decrescente por volume</td></tr>
+        <tr><td class="tdb">3 · Strategic Ops Fee</td><td>Recorrente fixo</td><td class="tdp">R$ 10–150k/mês</td><td>Compass + Strategic Touch. Capital aberto: mín. R$ 40k</td></tr>
+        <tr><td class="tdb">4 · Performance Fee</td><td>Variável opcional</td><td class="tdp">10–25% saving auditado</td><td>Cap 2–3× OS Subscription anual. Ativado caso a caso.</td></tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<!-- SECTION 3: MODOS -->
-<div class="section">
-  <div class="section-label">Os dois modos de entrega</div>
-  <div class="modes-grid">
-    <div class="mode-card">
-      <div class="mode-header">
-        <div class="mode-name">Build-Operate-Transfer</div>
-        <span class="mode-default">Default</span>
-      </div>
-      <ul class="mode-items">
+<div class="sec">
+  <div class="slabel">Dois modos de entrega</div>
+  <div class="mgrid">
+    <div class="mcard">
+      <div class="mhead"><div class="mname">Build-Operate-Transfer</div><span class="mbadge-def">Default</span></div>
+      <ul class="mitems">
         <li>Cliente fica com IP completo dos agentes</li>
-        <li>Agentes rodam na infra do cliente (containerizado)</li>
-        <li>Token e infra: cliente paga direto aos provedores</li>
-        <li>Período de Operate: mínimo 90 dias antes do Transfer</li>
-        <li>Cláusula early-exit no D14 (refund 70%)</li>
+        <li>Agentes rodam na infra do cliente</li>
+        <li>Tokens e infra: cliente paga direto aos provedores</li>
+        <li>Mínimo 90 dias de Operate antes do Transfer</li>
       </ul>
-      <div class="mode-icp"><strong>ICP:</strong> capital aberto (B3), TI robusta, plano de M&amp;A em 12–24 meses</div>
+      <div class="micp"><strong>ICP:</strong> Capital aberto (B3), TI robusta, plano de M&amp;A</div>
     </div>
-    <div class="mode-card">
-      <div class="mode-header">
-        <div class="mode-name">Managed Operation</div>
-        <span class="mode-alt">Alternativa</span>
-      </div>
-      <ul class="mode-items">
+    <div class="mcard">
+      <div class="mhead"><div class="mname">Managed Operation</div><span class="mbadge-alt">Alternativa</span></div>
+      <ul class="mitems">
         <li>Dalton Lab opera tudo continuamente</li>
         <li>IP fica com a Dalton Lab</li>
-        <li>Infra, tokens e manutenção: embutidos no fee</li>
-        <li>Managed Master Fee: R$ 40–150k/mês</li>
-        <li>Managed Agent Fee: R$ 12–25k/mês/agente</li>
+        <li>Infra e tokens embutidos no fee</li>
+        <li>R$ 40–150k/mês (master) + R$ 12–25k/agente</li>
       </ul>
-      <div class="mode-icp"><strong>ICP:</strong> Mid privadas com TI fraca, scaleups, setores com resistência interna a IA</div>
-      <div class="mode-premium">+30–40% sobre BOT</div>
+      <div class="micp"><strong>ICP:</strong> Mid-privadas com TI fraca, scaleups</div>
+      <div class="mprem">+30–40% sobre BOT</div>
     </div>
   </div>
 </div>
 
-<!-- SECTION 4: PIONEER -->
-<div class="section">
-  <div class="section-label">Pioneer Pricing — primeiros 5–8 clientes</div>
-  <div class="pioneer-box">
+<div class="sec">
+  <div class="slabel">Pioneer Pricing — primeiros 5–8 clientes</div>
+  <div class="pioneer">
     <div>
-      <div class="pioneer-col-label">Benefícios para o cliente Pioneer</div>
-      <ul class="pioneer-items">
-        <li>Desconto 30–40% em Build &amp; Transfer Fee</li>
-        <li>Desconto 30–40% em OS Subscription (primeiros 12 meses)</li>
-        <li>Desconto 20–30% em Strategic Operations Fee</li>
-        <li>Performance Fee mais generosa: até 25% saving, cap 3× OS anual</li>
-        <li>Retorno automático ao pricing regular após 12 meses (contratual)</li>
+      <div class="pio-lbl">Benefícios para o Pioneer</div>
+      <ul class="pio-items">
+        <li>Desconto 30–40% em Build &amp; Transfer</li>
+        <li>Desconto 30–40% em OS Subscription (12 meses)</li>
+        <li>Performance Fee até 25% saving, cap 3× OS anual</li>
+        <li>Retorno ao pricing regular após 12 meses (contratual)</li>
       </ul>
     </div>
     <div>
-      <div class="pioneer-col-label">Contrapartida obrigatória (Case Study Clause)</div>
-      <ul class="pioneer-items">
-        <li>Cliente vira case público com aprovação prévia de números</li>
+      <div class="pio-lbl">Contrapartida — Case Study Clause</div>
+      <ul class="pio-items">
+        <li>Case público com aprovação prévia de números</li>
         <li>Depoimento de C-level disponível para prospects</li>
         <li>Referência a outros prospects no setor</li>
-        <li>Presença eventual em eventos Dalton Lab</li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- SECTION 5: PROSPECTS -->
-<div class="section">
-  <div class="section-label">Aplicação aos 4 prospects ativos</div>
-  <div class="table-wrap">
+<div class="sec">
+  <div class="slabel">4 prospects ativos</div>
+  <div class="tw">
     <table>
-      <thead>
-        <tr>
-          <th>Prospect</th>
-          <th>Porte / Contexto</th>
-          <th>Modo</th>
-          <th>Pioneer?</th>
-          <th>Status / Próximo passo</th>
-        </tr>
-      </thead>
+      <thead><tr><th>Prospect</th><th>Contexto</th><th>Modo</th><th>Pioneer?</th><th>Próximo passo</th></tr></thead>
       <tbody>
-        <tr>
-          <td class="td-bold" style="color:var(--cyan);">Neogrid</td>
-          <td>R$ 274M · B3 · B2B SaaS</td>
-          <td><span class="badge badge-cyan">BOT</span></td>
-          <td><span class="badge badge-green">Sim</span></td>
-          <td>Proposta v2 em fechamento. Master Fee R$ 35k. Case Study Clause ativa.</td>
-        </tr>
-        <tr>
-          <td class="td-bold">MakeOne</td>
-          <td>R$ 200M · Telecom/Tech · AI Lab interno (CAIO: Harold)</td>
-          <td><span class="badge badge-cyan">BOT</span></td>
-          <td><span class="badge badge-green">Sim</span></td>
-          <td>Posicionar como camada estratégica acima do AI Lab. Reformular proposta.</td>
-        </tr>
-        <tr>
-          <td class="td-bold">Rumo Logística</td>
-          <td>R$ 19B · B3 · Tier 1 absoluto</td>
-          <td><span class="badge badge-cyan">BOT</span></td>
-          <td><span class="badge badge-yellow">Considerar</span></td>
-          <td>Adicionar cláusula de ativação ao piloto gratuito de RH/Liderança. Risco de não converter sem ela.</td>
-        </tr>
-        <tr>
-          <td class="td-bold">Access Stage</td>
-          <td>R$ 300M · Plataforma · Robson é stakeholder</td>
-          <td><span class="badge badge-cyan">BOT</span></td>
-          <td><span class="badge badge-green">Sim</span></td>
-          <td>Piloto FP&amp;A em desenho. Adicionar cláusula de ativação. Reformular com novo modelo.</td>
-        </tr>
+        <tr><td class="tdb" style="color:var(--cy)">Neogrid</td><td>R$ 274M · B3 · B2B SaaS</td><td><span class="badge bC">BOT</span></td><td><span class="badge bY">Sim</span></td><td>Proposta v2 em fechamento. Master Fee R$ 35k.</td></tr>
+        <tr><td class="tdb">MakeOne</td><td>R$ 200M · Telecom · AI Lab interno</td><td><span class="badge bC">BOT</span></td><td><span class="badge bY">Sim</span></td><td>Reformular como camada acima do AI Lab.</td></tr>
+        <tr><td class="tdb">Rumo</td><td>R$ 19B · B3 · Tier 1</td><td><span class="badge bC">BOT</span></td><td><span class="badge bM">Considerar</span></td><td>Adicionar cláusula de ativação ao piloto.</td></tr>
+        <tr><td class="tdb">Access Stage</td><td>R$ 300M · Plataforma</td><td><span class="badge bC">BOT</span></td><td><span class="badge bY">Sim</span></td><td>Piloto FP&amp;A. Adicionar cláusula de ativação.</td></tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<!-- SECTION 6: COMPARAÇÃO -->
-<div class="section">
-  <div class="section-label">Modelo anterior vs novo modelo</div>
-  <div class="comparison-grid">
-    <div class="comp-col comp-old">
-      <div class="comp-header">Modelo anterior</div>
+<div class="sec">
+  <div class="slabel">Modelo anterior vs. v2.0</div>
+  <div class="compgrid">
+    <div class="cold">
+      <div class="comp-h">Modelo anterior</div>
       <ul class="comp-items">
-        <li>Master Fee + Agent Fee + Variable sobreposto</li>
-        <li>Cliente pagava por agente mensal sem ownership</li>
-        <li>Sem distinção de Tier (Lite / Standard / Critical)</li>
-        <li>IP ambíguo — sem cláusula de transfer explícita</li>
+        <li>Master Fee + Agent Fee sobrepostos</li>
+        <li>Cliente pagava mensalmente sem ownership</li>
+        <li>Sem tiers com critérios objetivos</li>
+        <li>IP ambíguo, sem transfer formal</li>
       </ul>
     </div>
-    <div class="comp-col comp-new">
-      <div class="comp-header">Novo modelo (v2.0)</div>
+    <div class="cnew">
+      <div class="comp-h">Novo modelo v2.0</div>
       <ul class="comp-items">
-        <li>Build &amp; Transfer + OS Subscription + Strategic Ops + Performance</li>
-        <li>Cliente paga construção + uso de plataforma + estratégia</li>
-        <li>3 Tiers claros com critérios objetivos e pricing definido</li>
-        <li>IP transferido formalmente (M&amp;A-ready, argumento B3)</li>
+        <li>Build &amp; Transfer + OS + Strategic Ops + Performance</li>
+        <li>Cliente constrói + assina plataforma + estratégia</li>
+        <li>3 Tiers com critérios e pricing definidos</li>
+        <li>IP transferido formalmente (M&amp;A-ready, B3)</li>
       </ul>
     </div>
   </div>
 </div>
 
 <footer>
-  <div class="footer-left">Confidencial · Uso interno · Dalton Lab</div>
-  <div class="footer-right">Rodrigo Spinola · CEO &amp; Founder</div>
+  <span>Confidencial · Uso interno · Dalton Lab</span>
+  <span>Rodrigo Spinola · CEO &amp; Founder</span>
 </footer>
-
 </div>
 </body>
 </html>

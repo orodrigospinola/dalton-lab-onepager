@@ -3,316 +3,194 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prioridades da Semana · Dalton Lab</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>4 · A Semana que Vem — Dalton Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #050d1c;
-  --bg-2: #0a1628;
-  --bg-3: #0f1f3a;
-  --card: rgba(15,31,58,0.7);
-  --card-h: rgba(20,41,72,0.9);
-  --border: rgba(51,173,229,0.12);
-  --border-2: rgba(51,173,229,0.3);
-  --text: #f0f9ff;
-  --text-2: #b6c7df;
-  --text-3: #6b7c95;
-  --text-4: #4a5670;
-  --cyan: #33ADE5;
-  --cyan-2: #5BC0F0;
-  --cyan-glow: rgba(51,173,229,0.15);
-  --green: #10b981;
-  --green-glow: rgba(16,185,129,0.15);
-  --yellow: #f59e0b;
-  --yellow-glow: rgba(245,158,11,0.15);
-  --red: #ef4444;
-  --purple: #a78bfa;
-  --grad-cyan: linear-gradient(135deg, #33ADE5 0%, #5BC0F0 100%);
+:root{
+  --bg:#050d1c;--card:rgba(15,31,58,0.75);
+  --b1:rgba(51,173,229,0.12);--b2:rgba(51,173,229,0.32);
+  --t0:#f0f9ff;--t1:#b6c7df;--t2:#6b7c95;--t3:#3a4d65;
+  --cy:#33ADE5;--cy2:rgba(51,173,229,0.14);
+  --gr:#10b981;--gr2:rgba(16,185,129,0.13);
+  --ye:#f59e0b;--ye2:rgba(245,158,11,0.13);
+  --re:#ef4444;--re2:rgba(239,68,68,0.08);
+  --pu:#a78bfa;
+  --gcyan:linear-gradient(135deg,#33ADE5,#5BC0F0);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+html{font-size:13px;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t0);min-height:100vh;-webkit-font-smoothing:antialiased;}
+.page{max-width:1080px;margin:0 auto;padding:28px 36px 36px;}
 
-.page{max-width:1100px;margin:0 auto;padding:32px 40px 40px;}
+header{display:flex;align-items:center;justify-content:space-between;padding-bottom:16px;margin-bottom:22px;border-bottom:1px solid var(--b1);}
+.hl{display:flex;align-items:center;gap:12px;}
+.logo{width:40px;height:40px;flex-shrink:0;border-radius:10px;}
+.htitle{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--t1);}
+.hsub{font-size:11px;color:var(--t2);margin-top:1px;}
+.hdate{font-size:11px;color:var(--t2);text-align:right;}
+.hnum{font-size:11px;font-weight:600;color:var(--cy);text-align:right;margin-top:2px;letter-spacing:0.06em;}
 
-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--border);}
-.header-left{display:flex;align-items:center;gap:14px;}
-.logo-img{width:44px;height:44px;flex-shrink:0;}
-.header-title{font-size:13px;font-weight:700;color:var(--text-2);}
-.header-subtitle{font-size:11px;color:var(--text-3);margin-top:2px;}
-.header-date{font-size:11px;color:var(--text-3);text-align:right;}
-.header-num{font-size:11px;font-weight:700;color:var(--cyan);margin-top:2px;letter-spacing:0.05em;text-align:right;}
+.hero{margin-bottom:20px;}
+.tag{display:inline-block;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.22em;color:var(--cy);border:1px solid var(--b2);padding:4px 12px;border-radius:40px;background:var(--cy2);margin-bottom:10px;}
+h1{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;letter-spacing:-0.5px;line-height:1.1;margin-bottom:7px;}
+h1 span{background:var(--gcyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero p{font-size:13px;color:var(--t1);line-height:1.55;}
 
-.hero{margin-bottom:22px;}
-.hero-tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--cyan);border:1px solid var(--border-2);padding:5px 14px;border-radius:50px;background:var(--cyan-glow);margin-bottom:12px;}
-.hero-title{font-size:36px;font-weight:800;color:var(--text);letter-spacing:-0.5px;line-height:1.1;margin-bottom:8px;}
-.hero-title span{background:var(--grad-cyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hero-sub{font-size:14px;color:var(--text-2);line-height:1.5;}
-
-.section{margin-bottom:20px;}
-.section-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--cyan);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
-.section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+.sec{margin-bottom:18px;}
+.slabel{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.22em;color:var(--cy);margin-bottom:9px;display:flex;align-items:center;gap:8px;}
+.slabel::after{content:'';flex:1;height:1px;background:var(--b1);}
 
 /* CALENDAR */
-.calendar{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
-.day-card{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
-.day-header{padding:8px 12px;background:rgba(51,173,229,0.08);border-bottom:1px solid var(--border);}
-.day-name{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.15em;color:var(--cyan);}
-.day-date{font-size:10px;color:var(--text-3);margin-top:1px;}
-.day-body{padding:10px 12px;display:flex;flex-direction:column;gap:6px;}
-.day-item{font-size:11px;color:var(--text-2);padding-left:12px;position:relative;line-height:1.4;}
-.day-item::before{content:'›';position:absolute;left:0;color:var(--cyan);font-weight:700;}
-.day-item .owner{display:inline-block;font-size:9px;font-weight:700;color:var(--text-3);background:rgba(255,255,255,0.04);border:1px solid var(--border);padding:1px 5px;border-radius:3px;margin-left:4px;vertical-align:middle;}
-.day-item strong{color:var(--text);font-weight:700;}
-.day-highlight{background:rgba(51,173,229,0.06);border-left:2px solid var(--cyan);padding:5px 8px;border-radius:0 4px 4px 0;font-size:11px;color:var(--text);font-weight:600;line-height:1.3;}
+.cal{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+.day{background:var(--card);border:1px solid var(--b1);border-radius:8px;overflow:hidden;}
+.day-h{padding:7px 11px;background:rgba(51,173,229,0.07);border-bottom:1px solid var(--b1);}
+.day-name{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--cy);}
+.day-date{font-size:9px;color:var(--t2);margin-top:1px;}
+.day-b{padding:9px 11px;display:flex;flex-direction:column;gap:5px;}
+.day-item{font-size:11px;color:var(--t1);padding-left:11px;position:relative;line-height:1.35;}
+.day-item::before{content:'›';position:absolute;left:0;color:var(--cy);font-weight:700;}
+.day-item strong{color:var(--t0);}
+.owner{display:inline;font-size:9px;font-weight:600;color:var(--t2);background:rgba(255,255,255,0.04);border:1px solid var(--b1);padding:0 4px;border-radius:3px;margin-left:3px;}
+.day-hl{background:var(--cy2);border-left:2px solid var(--cy);padding:4px 7px;border-radius:0 4px 4px 0;font-size:11px;color:var(--t0);font-weight:600;line-height:1.3;}
 
 /* DECISIONS */
-.decisions{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.decision{display:flex;align-items:flex-start;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 12px;}
-.checkbox{width:16px;height:16px;border:2px solid var(--border-2);border-radius:3px;flex-shrink:0;margin-top:1px;}
-.decision-text{font-size:11px;color:var(--text-2);line-height:1.4;}
-.decision-text strong{color:var(--text);font-weight:700;}
-.decision-owner{font-size:9px;color:var(--cyan);font-weight:700;margin-top:3px;}
+.decgrid{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
+.dec{display:flex;align-items:flex-start;gap:9px;background:var(--card);border:1px solid var(--b1);border-radius:8px;padding:9px 11px;}
+.cb{width:15px;height:15px;border:2px solid var(--b2);border-radius:3px;flex-shrink:0;margin-top:1px;}
+.dec-t{font-size:11px;color:var(--t1);line-height:1.4;}
+.dec-t strong{color:var(--t0);}
+.dec-o{font-size:9px;color:var(--cy);font-weight:600;margin-top:2px;}
 
 /* KPIS */
-.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
-.kpi{background:linear-gradient(135deg,rgba(16,185,129,0.07),rgba(16,185,129,0.02));border:1px solid rgba(16,185,129,0.2);border-radius:8px;padding:10px 12px;}
-.kpi-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--green);margin-bottom:5px;}
-.kpi-text{font-size:11px;color:var(--text-2);line-height:1.4;}
+.kgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;}
+.kpi{background:linear-gradient(135deg,rgba(16,185,129,0.07),rgba(16,185,129,0.02));border:1px solid rgba(16,185,129,0.2);border-radius:8px;padding:9px 11px;}
+.kpi-lbl{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--gr);margin-bottom:4px;}
+.kpi-t{font-size:11px;color:var(--t1);line-height:1.4;}
 
 /* RISKS */
-.risks{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
-.risk{background:rgba(239,68,68,0.04);border:1px solid rgba(239,68,68,0.15);border-radius:8px;padding:10px 12px;}
-.risk-icon{font-size:12px;margin-bottom:4px;}
-.risk-title{font-size:11px;font-weight:700;color:var(--text-2);margin-bottom:3px;}
-.risk-desc{font-size:10px;color:var(--text-3);line-height:1.4;}
+.rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;}
+.risk{background:var(--re2);border:1px solid rgba(239,68,68,0.15);border-radius:8px;padding:9px 11px;}
+.risk-t{font-size:11px;font-weight:600;color:var(--t1);margin-bottom:2px;}
+.risk-d{font-size:10px;color:var(--t2);line-height:1.4;}
 
-footer{margin-top:20px;padding-top:14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
-.footer-left,.footer-right{font-size:10px;color:var(--text-4);}
-
-@media print{
-  body{background:#050d1c;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-  .page{padding:20px 28px;}
-}
+footer{margin-top:20px;padding-top:12px;border-top:1px solid var(--b1);display:flex;justify-content:space-between;}
+footer span{font-size:10px;color:var(--t3);}
+@media print{body{background:#050d1c;-webkit-print-color-adjust:exact;print-color-adjust:exact;}.page{padding:18px 26px;}}
 </style>
 </head>
 <body>
 <div class="page">
 
 <header>
-  <div class="header-left">
-    <img src="logo-d-white.svg" class="logo-img" alt="Dalton Lab">
+  <div class="hl">
+    <img src="data:image/png;base64,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" class="logo" alt="Dalton Lab">
     <div>
-      <div class="header-title">Dalton Lab · Reunião de Sócios</div>
-      <div class="header-subtitle">Rodrigo Spinola · Marcelo Ramos</div>
+      <div class="htitle">Dalton Lab · Reunião de Sócios</div>
+      <div class="hsub">Rodrigo Spinola · Marcelo Ramos · Confidencial</div>
     </div>
   </div>
   <div>
-    <div class="header-date">10 de maio de 2026</div>
-    <div class="header-num">4 DE 4</div>
+    <div class="hdate">10 de maio de 2026</div>
+    <div class="hnum">4 DE 4</div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-tag">ONE-PAGER 4 DE 4 · EXECUÇÃO</div>
-  <h1 class="hero-title">A <span>Semana</span> que Vem</h1>
-  <p class="hero-sub">8 decisões que precisam acontecer. 5 dias. 2 owners principais. Foco em desbloqueio.</p>
-</section>
+<div class="hero">
+  <div class="tag">Execução</div>
+  <h1>A <span>Semana</span> que Vem</h1>
+  <p>8 decisões. 5 dias. 2 owners. Foco em desbloqueio.</p>
+</div>
 
-<!-- SECTION 1: CALENDÁRIO -->
-<div class="section">
-  <div class="section-label">Ações por dia — semana de 11 a 16 de maio de 2026</div>
-  <div class="calendar">
-
-    <div class="day-card">
-      <div class="day-header">
-        <div class="day-name">Segunda</div>
-        <div class="day-date">11 de maio</div>
-      </div>
-      <div class="day-body">
-        <div class="day-highlight">Esta reunião de sócios</div>
-        <div class="day-item"><strong>Decisão Pioneer Pricing Neogrid</strong> <span class="owner">R+M+J</span></div>
-        <div class="day-item">Briefing Diego: OS roadmap 90 dias <span class="owner">Rodrigo</span></div>
-        <div class="day-item">Confirmar call assíncrono com Júlio <span class="owner">Rodrigo</span></div>
+<div class="sec">
+  <div class="slabel">Calendário — semana de 11 a 15 de maio de 2026</div>
+  <div class="cal">
+    <div class="day">
+      <div class="day-h"><div class="day-name">Segunda</div><div class="day-date">11 mai</div></div>
+      <div class="day-b">
+        <div class="day-hl">Esta reunião de sócios</div>
+        <div class="day-item"><strong>Decisão Pioneer Neogrid</strong> <span class="owner">R+M+J</span></div>
+        <div class="day-item">Briefing Diego: roadmap OS <span class="owner">Rodrigo</span></div>
+        <div class="day-item">Confirmar call com Júlio <span class="owner">Rodrigo</span></div>
       </div>
     </div>
-
-    <div class="day-card">
-      <div class="day-header">
-        <div class="day-name">Terça</div>
-        <div class="day-date">12 de maio</div>
-      </div>
-      <div class="day-body">
-        <div class="day-item"><strong>Marcelo finaliza proposta v2 Neogrid (PDF)</strong> <span class="owner">Marcelo</span></div>
-        <div class="day-item">Rodrigo valida proposta final <span class="owner">Rodrigo</span></div>
-        <div class="day-item">Agendar conversa Rogério (Partners) <span class="owner">Rodrigo</span></div>
-        <div class="day-item">Início reformulação proposta MakeOne <span class="owner">Marcelo</span></div>
+    <div class="day">
+      <div class="day-h"><div class="day-name">Terça</div><div class="day-date">12 mai</div></div>
+      <div class="day-b">
+        <div class="day-item"><strong>Finalizar proposta v2 Neogrid</strong> <span class="owner">Marcelo</span></div>
+        <div class="day-item">Rodrigo valida proposta <span class="owner">Rodrigo</span></div>
+        <div class="day-item">Agendar call Rogério (Partners) <span class="owner">Rodrigo</span></div>
+        <div class="day-item">Iniciar reformulação MakeOne <span class="owner">Marcelo</span></div>
       </div>
     </div>
-
-    <div class="day-card">
-      <div class="day-header">
-        <div class="day-name">Quarta</div>
-        <div class="day-date">13 de maio</div>
-      </div>
-      <div class="day-body">
-        <div class="day-item"><strong>Envio proposta v2 para Bruno (Neogrid)</strong> <span class="owner">Rodrigo</span></div>
-        <div class="day-item">Reunião de produto com Diego (OS roadmap detalhado) <span class="owner">R+Diego</span></div>
-        <div class="day-item">Identificar candidato dev sênior <span class="owner">M+Diego</span></div>
-        <div class="day-item">Adicionar cláusula ativação Rumo + Access Stage <span class="owner">Marcelo</span></div>
+    <div class="day">
+      <div class="day-h"><div class="day-name">Quarta</div><div class="day-date">13 mai</div></div>
+      <div class="day-b">
+        <div class="day-item"><strong>Envio proposta v2 para Bruno</strong> <span class="owner">Rodrigo</span></div>
+        <div class="day-item">Reunião produto Diego (OS) <span class="owner">R+Diego</span></div>
+        <div class="day-item">Identificar dev sênior <span class="owner">M+Diego</span></div>
+        <div class="day-item">Cláusula Rumo + Access Stage <span class="owner">Marcelo</span></div>
       </div>
     </div>
-
-    <div class="day-card">
-      <div class="day-header">
-        <div class="day-name">Quinta</div>
-        <div class="day-date">14 de maio</div>
-      </div>
-      <div class="day-body">
-        <div class="day-item"><strong>Finalizar proposta MakeOne (BOT)</strong> <span class="owner">Marcelo</span></div>
-        <div class="day-item">Conversa Júlio: Strategy Memo (captação futura) <span class="owner">Rodrigo</span></div>
-        <div class="day-item">Follow-up Neogrid (confirmação recebimento) <span class="owner">Rodrigo</span></div>
-        <div class="day-item">Aprovação contratação dev sênior <span class="owner">Rodrigo</span></div>
+    <div class="day">
+      <div class="day-h"><div class="day-name">Quinta</div><div class="day-date">14 mai</div></div>
+      <div class="day-b">
+        <div class="day-item"><strong>Proposta MakeOne (BOT) final</strong> <span class="owner">Marcelo</span></div>
+        <div class="day-item">Júlio: Strategy Memo <span class="owner">Rodrigo</span></div>
+        <div class="day-item">Follow-up Neogrid <span class="owner">Rodrigo</span></div>
+        <div class="day-item">Aprovar contratação dev sênior <span class="owner">Rodrigo</span></div>
       </div>
     </div>
-
-    <div class="day-card">
-      <div class="day-header">
-        <div class="day-name">Sexta</div>
-        <div class="day-date">15 de maio</div>
-      </div>
-      <div class="day-body">
-        <div class="day-item">Review da semana (sócios) <span class="owner">R+M</span></div>
-        <div class="day-item">Sinal para Gabi: conteúdo em pipeline <span class="owner">Rodrigo</span></div>
+    <div class="day">
+      <div class="day-h"><div class="day-name">Sexta</div><div class="day-date">15 mai</div></div>
+      <div class="day-b">
+        <div class="day-item">Review da semana <span class="owner">R+M</span></div>
+        <div class="day-item">Sinal para Gabi: conteúdo <span class="owner">Rodrigo</span></div>
         <div class="day-item">Update caixa semanal <span class="owner">Marcelo</span></div>
-        <div class="day-item">Ajustes propostas conforme feedbacks <span class="owner">Marcelo</span></div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- SECTION 2: DECISÕES -->
-<div class="section">
-  <div class="section-label">Decisões que precisam acontecer esta semana</div>
-  <div class="decisions">
-    <div class="decision">
-      <div class="checkbox"></div>
-      <div>
-        <div class="decision-text"><strong>Aprovação Pioneer Pricing Neogrid</strong> — R$ 35k Master + Build R$ 50–80k + Performance 25% (cap 3× OS anual)</div>
-        <div class="decision-owner">Owner: Rodrigo + Marcelo + Júlio</div>
-      </div>
-    </div>
-    <div class="decision">
-      <div class="checkbox"></div>
-      <div>
-        <div class="decision-text"><strong>Case Study Clause obrigatória</strong> — confirmação de que todo Pioneer exige contrapartida pública</div>
-        <div class="decision-owner">Owner: Rodrigo</div>
-      </div>
-    </div>
-    <div class="decision">
-      <div class="checkbox"></div>
-      <div>
-        <div class="decision-text"><strong>Envio proposta v2 Neogrid até quarta-feira</strong> — sem posterior a quinta</div>
-        <div class="decision-owner">Owner: Rodrigo (envio) + Marcelo (prep)</div>
-      </div>
-    </div>
-    <div class="decision">
-      <div class="checkbox"></div>
-      <div>
-        <div class="decision-text"><strong>Antecipar contratação dev sênior para junho</strong> — Diego não consegue OS em 90 dias sozinho</div>
-        <div class="decision-owner">Owner: Rodrigo (aprovação) + Diego (perfil)</div>
-      </div>
-    </div>
-    <div class="decision">
-      <div class="checkbox"></div>
-      <div>
-        <div class="decision-text"><strong>CSM em Q3</strong> — aprovar abertura de processo seletivo agora para não atrasar onboarding de clientes</div>
-        <div class="decision-owner">Owner: Rodrigo</div>
-      </div>
-    </div>
-    <div class="decision">
-      <div class="checkbox"></div>
-      <div>
-        <div class="decision-text"><strong>Agendar conversa Rodrigo + Júlio + Rogério</strong> — Programa de Partners, nas próximas 2–3 semanas</div>
-        <div class="decision-owner">Owner: Rodrigo</div>
-      </div>
-    </div>
-    <div class="decision">
-      <div class="checkbox"></div>
-      <div>
-        <div class="decision-text"><strong>Confirmar roadmap OS 90 dias com Diego</strong> — semana a semana, marcos claros, dependências mapeadas</div>
-        <div class="decision-owner">Owner: Rodrigo + Diego</div>
-      </div>
-    </div>
-    <div class="decision">
-      <div class="checkbox"></div>
-      <div>
-        <div class="decision-text"><strong>Adicionar cláusula de ativação em Rumo e Access Stage</strong> — pilotos sem cláusula têm risco alto de não converter</div>
-        <div class="decision-owner">Owner: Marcelo</div>
+        <div class="day-item">Ajustes propostas c/ feedbacks <span class="owner">Marcelo</span></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SECTION 3: KPIs DA SEMANA -->
-<div class="section">
-  <div class="section-label">Indicadores que queremos ver até sexta-feira</div>
-  <div class="kpis">
-    <div class="kpi">
-      <div class="kpi-label">✓ Proposta</div>
-      <div class="kpi-text">Proposta v2 Neogrid enviada para Bruno até quarta</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">✓ OS Roadmap</div>
-      <div class="kpi-text">Roadmap OS travado com Diego, semana a semana por 90 dias</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">✓ Partners</div>
-      <div class="kpi-text">Primeira conversa com Rogério agendada</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">✓ Pilotos</div>
-      <div class="kpi-text">Cláusula de ativação adicionada em Rumo e Access Stage</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">✓ MakeOne</div>
-      <div class="kpi-text">Proposta reformulada com modelo BOT + 4 camadas</div>
-    </div>
+<div class="sec">
+  <div class="slabel">8 decisões desta semana</div>
+  <div class="decgrid">
+    <div class="dec"><div class="cb"></div><div><div class="dec-t"><strong>Pioneer Pricing Neogrid</strong> — R$ 35k Master + Build R$ 50–80k + Performance 25%</div><div class="dec-o">Rodrigo + Marcelo + Júlio</div></div></div>
+    <div class="dec"><div class="cb"></div><div><div class="dec-t"><strong>Case Study Clause obrigatória</strong> — todo Pioneer exige contrapartida pública</div><div class="dec-o">Rodrigo</div></div></div>
+    <div class="dec"><div class="cb"></div><div><div class="dec-t"><strong>Envio proposta v2 Neogrid até quarta</strong> — sem atrasar para quinta</div><div class="dec-o">Rodrigo (envio) + Marcelo (prep)</div></div></div>
+    <div class="dec"><div class="cb"></div><div><div class="dec-t"><strong>Contratar dev sênior em junho</strong> — Diego não faz OS em 90 dias sozinho</div><div class="dec-o">Rodrigo (aprovação) + Diego (perfil)</div></div></div>
+    <div class="dec"><div class="cb"></div><div><div class="dec-t"><strong>CSM em Q3</strong> — abrir seletivo agora para não atrasar onboarding</div><div class="dec-o">Rodrigo</div></div></div>
+    <div class="dec"><div class="cb"></div><div><div class="dec-t"><strong>Agendar call Rodrigo + Júlio + Rogério</strong> — Programa de Partners</div><div class="dec-o">Rodrigo</div></div></div>
+    <div class="dec"><div class="cb"></div><div><div class="dec-t"><strong>Roadmap OS 90 dias com Diego</strong> — semana a semana, marcos claros</div><div class="dec-o">Rodrigo + Diego</div></div></div>
+    <div class="dec"><div class="cb"></div><div><div class="dec-t"><strong>Cláusula de ativação em Rumo e Access Stage</strong> — pilotos sem cláusula não convertem</div><div class="dec-o">Marcelo</div></div></div>
   </div>
 </div>
 
-<!-- SECTION 4: RISCOS -->
-<div class="section">
-  <div class="section-label">Bloqueios e riscos a monitorar</div>
-  <div class="risks">
-    <div class="risk">
-      <div class="risk-icon">⚠</div>
-      <div class="risk-title">Neogrid: atraso interno</div>
-      <div class="risk-desc">Mudança de prioridade interna ou troca de stakeholder pode adiar assinatura. Monitorar com Bruno semanalmente.</div>
-    </div>
-    <div class="risk">
-      <div class="risk-icon">⚠</div>
-      <div class="risk-title">Capacity técnica de Diego</div>
-      <div class="risk-desc">Sem dev sênior antecipado, OS atrasa. Pior caso: OS não fica pronto em 90 dias e OS Subscription não entra no contrato.</div>
-    </div>
-    <div class="risk">
-      <div class="risk-icon">⚠</div>
-      <div class="risk-title">Estrutura de partnership</div>
-      <div class="risk-desc">Rogério pode querer estrutura que não cabe no Programa de Partners atual. Alinhar expectativas antes da conversa formal.</div>
-    </div>
-    <div class="risk">
-      <div class="risk-icon">⚠</div>
-      <div class="risk-title">Caixa antes da Neogrid</div>
-      <div class="risk-desc">Se Neogrid atrasar mais de 30 dias na assinatura, primeira parcela (50% do Build Fee) fica fora do caixa de junho. Monitorar com Marcelo.</div>
-    </div>
+<div class="sec">
+  <div class="slabel">KPIs até sexta</div>
+  <div class="kgrid">
+    <div class="kpi"><div class="kpi-lbl">Proposta</div><div class="kpi-t">v2 Neogrid enviada para Bruno até quarta</div></div>
+    <div class="kpi"><div class="kpi-lbl">OS Roadmap</div><div class="kpi-t">Travado com Diego, semana a semana</div></div>
+    <div class="kpi"><div class="kpi-lbl">Partners</div><div class="kpi-t">1ª conversa com Rogério agendada</div></div>
+    <div class="kpi"><div class="kpi-lbl">Pilotos</div><div class="kpi-t">Cláusula ativação em Rumo + Access Stage</div></div>
+    <div class="kpi"><div class="kpi-lbl">MakeOne</div><div class="kpi-t">Proposta reformulada (BOT + 4 camadas)</div></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="slabel">Riscos a monitorar</div>
+  <div class="rgrid">
+    <div class="risk"><div class="risk-t">Neogrid: atraso interno</div><div class="risk-d">Troca de stakeholder ou mudança de prioridade pode adiar assinatura. Monitorar Bruno semanalmente.</div></div>
+    <div class="risk"><div class="risk-t">Capacity técnica de Diego</div><div class="risk-d">Sem dev sênior em junho, OS atrasa e OS Subscription não entra nos contratos.</div></div>
+    <div class="risk"><div class="risk-t">Estrutura de partnership</div><div class="risk-d">Rogério pode querer estrutura fora do modelo atual. Alinhar antes da conversa formal.</div></div>
+    <div class="risk"><div class="risk-t">Caixa antes da Neogrid</div><div class="risk-d">Neogrid &gt;30 dias para assinar: 1ª parcela (50% do Build) fora do caixa de junho.</div></div>
   </div>
 </div>
 
 <footer>
-  <div class="footer-left">Confidencial · Uso interno · Dalton Lab</div>
-  <div class="footer-right">Rodrigo Spinola · CEO &amp; Founder</div>
+  <span>Confidencial · Uso interno · Dalton Lab</span>
+  <span>Rodrigo Spinola · CEO &amp; Founder</span>
 </footer>
-
 </div>
 </body>
 </html>
